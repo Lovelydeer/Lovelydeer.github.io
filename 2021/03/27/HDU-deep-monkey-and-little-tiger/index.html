@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>HDU deep monkey and little tiger | Lovelydeer&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="%%%  还没补题 hdu deep monkey and little tiger 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;typedef long long ll;cons">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU deep monkey and little tiger">
+<meta property="og:url" content="http://example.com/2021/03/27/HDU-deep-monkey-and-little-tiger/index.html">
+<meta property="og:site_name" content="Lovelydeer&#39;s blog">
+<meta property="og:description" content="%%%  还没补题 hdu deep monkey and little tiger 12345678910111213141516171819202122232425262728293031323334353637383940414243444546#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;typedef long long ll;cons">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-27T03:55:08.000Z">
+<meta property="article:modified_time" content="2021-03-27T04:21:30.966Z">
+<meta property="article:author" content="Lovelydeer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Lovelydeer's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Lovelydeer&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">今天也是个垃圾鸭</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-HDU-deep-monkey-and-little-tiger" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/03/27/HDU-deep-monkey-and-little-tiger/" class="article-date">
+  <time class="dt-published" datetime="2021-03-27T03:55:08.000Z" itemprop="datePublished">2021-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      HDU deep monkey and little tiger
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>%%%  还没补题</p>
+<p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=4815">hdu deep monkey and little tiger</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e6</span> + <span class="number">15</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD  = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">40000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y ,<span class="keyword">double</span> z)</span></span>&#123;</span><br><span class="line">cout&lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; z &lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">__int64  dp[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>    n , x;</span><br><span class="line">    <span class="keyword">double</span> p;</span><br><span class="line">   cin&gt;&gt; n &gt;&gt; p;</span><br><span class="line">   dp[<span class="number">0</span>]  = <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i =  <span class="number">1</span>; i &lt; MAX ; i++) dp[i] = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;  n; i++)&#123;</span><br><span class="line">    cin&gt;&gt; x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">40000</span>; j &gt;= x; j--)&#123;</span><br><span class="line">      <span class="keyword">if</span>( dp[j - x] )  dp[j] += dp[j-x]; <span class="comment">// 我以为我懂了，难受，尬</span></span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">double</span>  base = <span class="built_in">pow</span>(<span class="number">2.0</span>, <span class="number">1.0</span> * n);</span><br><span class="line">   <span class="comment">//cout&lt;&lt;base;</span></span><br><span class="line">   <span class="keyword">double</span>  P = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= <span class="number">40000</span>; i++)&#123;</span><br><span class="line">     sum+=dp[i];</span><br><span class="line">     <span class="comment">//cout&lt;&lt;sum &lt;&lt; &quot; &quot;&lt;&lt; base &lt;&lt;endl;</span></span><br><span class="line">     P = <span class="number">1.0</span> * sum / base;</span><br><span class="line">     <span class="comment">//cout&lt;&lt; P &lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">if</span>(P &gt;= p)&#123;</span><br><span class="line">        cout&lt;&lt; i &lt;&lt;endl;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">     cin&gt;&gt;t;</span><br><span class="line">     <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/03/27/HDU-deep-monkey-and-little-tiger/" data-id="ckmrk992k0001qctld9108mhl" data-title="HDU deep monkey and little tiger" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据类型型的范围
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/03/26/%E9%98%9F%E9%87%8C%E6%9C%89%E5%A6%B9%E5%AD%90%E5%95%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">队里有妹子啦</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/27/%E4%BA%8C%E7%BB%B4%E8%83%8C%E5%8C%85/">二维背包</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/">数据类型型的范围</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/27/HDU-deep-monkey-and-little-tiger/">HDU deep monkey and little tiger</a>
+          </li>
+        
+          <li>
+            <a href="/2021/03/26/%E9%98%9F%E9%87%8C%E6%9C%89%E5%A6%B9%E5%AD%90%E5%95%A6/">队里有妹子啦</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Lovelydeer<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
