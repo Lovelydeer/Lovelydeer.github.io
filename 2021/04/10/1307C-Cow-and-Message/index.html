@@ -14,7 +14,7 @@
 <meta property="og:description" content="1307C. Cow and Message 题意：给定一个字符串s，让你找一个子序列出现最多次，而且子序列的下标为等差数列。 嗯，我当时是懵了，还读错了题。 等差序列长度为1或2时很easy； 长度为1时，等差任意，长度为2时，等差也可任意。 当长度为3时事情就变得复杂，因为每一个长度为3的都要对应一个长度为2的序列，而且还要等差。 所以只用判断长度为1 或 2 的子序列即可。 1cnt[i][">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-10T07:38:07.000Z">
-<meta property="article:modified_time" content="2021-04-10T10:23:01.859Z">
+<meta property="article:modified_time" content="2021-04-15T04:50:27.199Z">
 <meta property="article:author" content="Lovelydeer">
 <meta name="twitter:card" content="summary">
   
@@ -118,11 +118,11 @@
 <p>发现口胡错了会<em><strong>update</strong></em></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e5</span>;</span><br><span class="line">ll hasPre[N][<span class="number">35</span>]; <span class="comment">// update: 其实不用开二维数组，因为不需要太多之前的信息</span></span><br><span class="line">ll cnt[<span class="number">35</span>][<span class="number">35</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    string s;</span><br><span class="line">    cin&gt;&gt; s;</span><br><span class="line">    <span class="keyword">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( i )&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">26</span>; j++)&#123;</span><br><span class="line">            hasPre[i][j] = hasPre[i<span class="number">-1</span>][j];</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        hasPre[i][s[i]-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; <span class="number">26</span>; j++)</span><br><span class="line">        ans = <span class="built_in">max</span>(ans,hasPre[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;  i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> pre = <span class="number">0</span>; pre &lt; <span class="number">26</span>; pre++)&#123;</span><br><span class="line">           cnt[pre][s[i+<span class="number">1</span>] - <span class="string">&#x27;a&#x27;</span>] += hasPre[i][pre];</span><br><span class="line">           ans = <span class="built_in">max</span>(ans,cnt[pre][s[i+<span class="number">1</span>] - <span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">   <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>/********************************************************************************************************************************************************************************************************************************************/</p>
+<p>/********************************************************************************************************************************************************/</p>
 <p><strong>Tutorial:</strong></p>
-<p>We observe that if the hidden string that occurs the most times has length longer than 22, then there must exist one that occurs just as many times of length exactly 22. This is true because we can always just take the first 22 letters; there can’t be any collisions. Therefore, we only need to check strings of lengths 11 and 22. Checking strings of length 11 is easy. To check strings of length 22, we can iterate across SS from left to right and update the number of times we have seen each string of length 11 and 22 using DP.</p>
+<p>We observe that if the hidden string that occurs the most times has length longer than 22,<br>then there must exist one that occurs just as many times of length exactly 22.<br>This is true because we can always just take the first 22 letters;<br>there can’t be any collisions.<br>Therefore, we only need to check strings of lengths 11 and 22.<br>Checking strings of length 11 is easy.<br>To check strings of length 22,<br>we can iterate across S from left to right<br>and update the number of times we have seen each string of length 11 and 22 using DP.</p>
 <p>Time Complexity: O(|s|c)O(|s|c) (c is length of alphabet)</p>
-<p>/********************************************************************************************************************************************************************************************************************************************/</p>
+<p>/*******************************************************************************************************************************************************/</p>
 <hr>
 <p>题外话：</p>
 <p>自己读了一会题目，发现很懵逼。</p>
@@ -141,6 +141,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CF1105CAyoub and Lost Array
+        
+      </div>
+    </a>
   
   
     <a href="/2021/04/10/CF71C-Round-Table-Knights/" id="article-nav-older" class="article-nav-link-wrap">
@@ -183,23 +192,23 @@
       <ul>
         
           <li>
+            <a href="/2021/04/18/UVA-11584/">UVA 11584</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/17/UVA-11400/">UVA 11400</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/CF1461CRandom-Events/">CF1461CRandom Events</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/">CF1105CAyoub and Lost Array</a>
+          </li>
+        
+          <li>
             <a href="/2021/04/10/1307C-Cow-and-Message/">1307C. Cow and Message</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/10/CF71C-Round-Table-Knights/">CF71C. Round Table Knights</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/09/797B-Odd-sum/">797B. Odd sum</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/08/CF1132F-%E5%8C%BA%E9%97%B4dp/">CF1132F 区间dp</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/07/CF1499C/">CF1499C</a>
           </li>
         
       </ul>

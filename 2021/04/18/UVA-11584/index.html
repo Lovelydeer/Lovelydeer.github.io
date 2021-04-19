@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>UVA 11584 | Lovelydeer&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。 嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。要哮着做题，这些所谓的题目万变不离其中，大致就是我不会的，其他人都会的 诸如此类的东西罢了。🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺 嗯~ o(￣▽￣)o真的，我看这题就懵了，完全想不到dp的思路。即使已经知道这道题目是线性dp的练习题。既然要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UVA 11584">
+<meta property="og:url" content="http://example.com/2021/04/18/UVA-11584/index.html">
+<meta property="og:site_name" content="Lovelydeer&#39;s blog">
+<meta property="og:description" content="题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。 嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。要哮着做题，这些所谓的题目万变不离其中，大致就是我不会的，其他人都会的 诸如此类的东西罢了。🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺 嗯~ o(￣▽￣)o真的，我看这题就懵了，完全想不到dp的思路。即使已经知道这道题目是线性dp的练习题。既然要">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-18T05:11:13.000Z">
+<meta property="article:modified_time" content="2021-04-19T10:50:28.475Z">
+<meta property="article:author" content="Lovelydeer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Lovelydeer's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Lovelydeer&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">今天也是个垃圾鸭</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-UVA-11584" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/18/UVA-11584/" class="article-date">
+  <time class="dt-published" datetime="2021-04-18T05:11:13.000Z" itemprop="datePublished">2021-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      UVA 11584
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。</p>
+<p>嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。<br>要哮着做题，这些所谓的题目万变不离其中，<br>大致就是我不会的，其他人都会的 诸如此类的东西罢了。<br>🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺</p>
+<p>嗯~ o(<em>￣▽￣</em>)o<br>真的，我看这题就懵了，完全想不到dp的思路。<br>即使已经知道这道题目是线性dp的练习题。<br>既然要求整段字符串的性质，即总的回文串最少。<br>看看能不能由前一段递推过来。<br>ps：看完题解之后，由了一丝丝感触，<strong>But</strong>并没什么卵用<br>    因为一做题就会白给。WDNMD</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = <span class="built_in">min</span>(dp[j] + (s[j] ~ s[i])是不是回文串)；</span><br><span class="line">是就 +<span class="number">1</span>，否则就不应该参与比较。</span><br><span class="line">我们再想这样就是<span class="built_in">O</span>(n^<span class="number">3</span>)，因为还要花费<span class="built_in">O</span>(n)去判断回文串。</span><br><span class="line">可以预处理回文串&#123;同样利用dp&#125;</span><br></pre></td></tr></table></figure>
+<p>en，这大概就是我的想法。等下 see see code</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UVa11584 Partitioning by Palindromes</span></span><br><span class="line"><span class="comment">// Rujia Liu</span></span><br><span class="line"><span class="comment">// This code is slightly different from the book.</span></span><br><span class="line"><span class="comment">// It  uses memoization to judge whether s[i..j] is a palindrome.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, kase, vis[maxn][maxn], p[maxn][maxn], d[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_palindrome</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(i &gt;= j) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s[i] != s[j]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(vis[i][j] == kase) <span class="keyword">return</span> p[i][j];</span><br><span class="line">  vis[i][j] = kase;</span><br><span class="line">  p[i][j] = <span class="built_in">is_palindrome</span>(i+<span class="number">1</span>, j<span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">return</span> p[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> T;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">  <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(vis));</span><br><span class="line">  <span class="keyword">for</span>(kase = <span class="number">1</span>; kase &lt;= T; kase++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s+<span class="number">1</span>);</span><br><span class="line">    n = <span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      d[i] = i+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">is_palindrome</span>(j+<span class="number">1</span>, i)) d[i] = <span class="built_in">min</span>(d[i], d[j] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/18/UVA-11584/" data-id="cknohbz330003owtl7fod333p" data-title="UVA 11584" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/04/17/UVA-11400/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">UVA 11400</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/04/18/UVA-11584/">UVA 11584</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/17/UVA-11400/">UVA 11400</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/CF1461CRandom-Events/">CF1461CRandom Events</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/">CF1105CAyoub and Lost Array</a>
+          </li>
+        
+          <li>
+            <a href="/2021/04/10/1307C-Cow-and-Message/">1307C. Cow and Message</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Lovelydeer<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
