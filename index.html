@@ -77,6 +77,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CF274A" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/02/CF274A/" class="article-date">
+  <time class="dt-published" datetime="2021-05-02T13:51:28.000Z" itemprop="datePublished">2021-05-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/02/CF274A/">CF274A</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/274/A">A. k-Multiple Free Set</a><br>�źߣ�����jio���Լ��ֿ��Ե�ʱ��<br>�ֳ����� BUG<br>��TMд��der��<br>���ã��ڶ������������ý���ʱ�����<br>Ҫ��Ȼ����̬�϶�����</p>
+<p><strong>����</strong>�� ���¾��Ǹ��� n  �����ظ�������<del>distinct positive integers</del>��<br>                     Ҫ���㹹��һ����󼯺ϣ�<br>             ��������ﲻ�ܴ��� x,y �� y = x * k��</p>
+<p>Tutorial:<br>��Ȼ��С���� ���� �Ӵ�С���򵥡�<br>��Ϊʹ��ѡ������������ˣ���Ҫ�����˵�˼�����Ӧ�����׶���<br>����Ҫѡ����Ŀ���������ּ��ϣ�<br>��Ҫ��ĳ�����ڵ����ֿ�ʼ�����ο��治�������� k ����<br>����Ӧ����tot - tot/2 , ��������������㡣<br>��Ϊ���ֵı������ܲ�������һ�𣬾Ͳ�һ����tot  - tot/2<br>�������Ӧ��ÿ�μ�¼��ǰ��û������1/k ��������оͲ��ɼӡ�<br>������ԡ�<br>�������Ӷ�Ӧ��Ϊ n * log2(MAX_NUM) + n * log2(n)</p>
+<p>�������� k == 1 ����� �� ����������ѭ���ˡ���Ȼ��T��</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">ll a[N];</span><br><span class="line">map&lt;ll , <span class="keyword">int</span> &gt; Map;</span><br><span class="line">map&lt;ll , <span class="keyword">int</span> &gt; vis;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> n,k;</span><br><span class="line">     <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">     cin&gt;&gt; n &gt;&gt; k;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        Map[a[i]] = <span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">sort</span>(a,a+n);</span><br><span class="line">     <span class="keyword">if</span>(k == <span class="number">1</span>) &#123; cout&lt;&lt; n &lt;&lt;endl;  <span class="keyword">return</span> ;&#125;</span><br><span class="line">     ll limit = a[n<span class="number">-1</span>];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( vis[a[i]] ) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">        ll temp = a[i];</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">while</span>(temp &lt;= limit)&#123;</span><br><span class="line">             <span class="keyword">if</span>( Map[temp] ) &#123;</span><br><span class="line">                <span class="keyword">if</span>(flag) ans++;</span><br><span class="line">                flag = !flag;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">else</span> flag = <span class="literal">true</span>;</span><br><span class="line">             vis[temp] = <span class="number">1</span>;</span><br><span class="line">             temp *= k;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>ENDING</p>
+<p>�þ�ûд�����ˣ���ǰ�����Ի���һ�㡣<br>��������Ϊ����Ϸ�����˰ɣ����о��Ǿ���ûʲô������<br>�Լ���ô�ˣ�ûʲô�ά�ĸ��ʡ�<br>��������������15�־��ܵø��˽��ˣ���ϧ�����������ǳ��������ˡ�<br>hh,��������<br>ò��ѧҵ�������кܶ��ˮ�Ŀ�Ŀ�������Ͽ���Ҳ������ȥ<br>��֪��Ϊʲô������Ĳ�������<br>�� LOSER IS MYASELF ��</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/02/CF274A/" data-id="cko79qao300001gtl04ygfoxm" data-title="CF274A" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-UVA-11584" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/18/UVA-11584/" class="article-date">
@@ -540,50 +586,6 @@
 
 
   
-    <article id="post-二维背包" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/27/%E4%BA%8C%E7%BB%B4%E8%83%8C%E5%8C%85/" class="article-date">
-  <time class="dt-published" datetime="2021-03-27T04:49:28.000Z" itemprop="datePublished">2021-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/27/%E4%BA%8C%E7%BB%B4%E8%83%8C%E5%8C%85/">二维背包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><del>啊，人傻了</del> </p>
-<p>没有想到DP，也不太懂二维DP，</p>
-<p>不知道是不是看过相关知识点，好像有点点印象</p>
-<p>我太菜啦</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">305</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD  = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">40000</span> + <span class="number">5</span>;</span><br><span class="line">ll a[N],b[N];</span><br><span class="line"><span class="keyword">int</span> dp[N][N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> n , m , q;</span><br><span class="line">   cin&gt;&gt;n &gt;&gt; m &gt;&gt; q;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    cin&gt;&gt;a[i] &gt;&gt; b[i];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> w = a[i]; w &lt;= m; w++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> v = b[i]; v &lt;= q; v++)&#123;</span><br><span class="line">           dp[w][v] = <span class="built_in">max</span>( dp[w - a[i] ] [v - b[i]] +  <span class="number">1</span> ,dp[w][v]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  cout&lt;&lt;dp[m][q]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">     <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">     <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/27/%E4%BA%8C%E7%BB%B4%E8%83%8C%E5%8C%85/" data-id="ckmrk992y0005qctlgc7ucpnt" data-title="二维背包" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -607,7 +609,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
     </div>
   </div>
 
@@ -618,6 +620,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/05/02/CF274A/">CF274A</a>
+          </li>
         
           <li>
             <a href="/2021/04/18/UVA-11584/">UVA 11584</a>
@@ -633,10 +639,6 @@
         
           <li>
             <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/">CF1105CAyoub and Lost Array</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/10/1307C-Cow-and-Message/">1307C. Cow and Message</a>
           </li>
         
       </ul>
