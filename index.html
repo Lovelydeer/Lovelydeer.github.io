@@ -77,6 +77,137 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UvaLive-3027" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/UvaLive-3027/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T15:17:29.000Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/UvaLive-3027/">UvaLive 3027</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVALive-3027">UvaLive 3027 Corporative Network</a></p>
+<p>在优美的代码前，我就像一个SB<br>啊，被c的字符输入困扰了好久<br>久到离谱<br>到后面一直以为不是我的算法出错了，<br>BING 了一下，才发现我错了，😭😭😭😭~~~~</p>
+<p>题意：</p>
+<p><strong>Tutorial</strong>：<br>待补</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fa[N];</span><br><span class="line"><span class="keyword">int</span> d[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">( <span class="keyword">int</span> x )</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fa[x] != x)&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = <span class="built_in">Find</span>(fa[x]);</span><br><span class="line">        d[x] += d[fa[x]];</span><br><span class="line">        <span class="keyword">return</span> fa[x] = pos;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="keyword">int</span> t,num,x,y;</span><br><span class="line">    <span class="keyword">char</span> command;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= num; i++)&#123;</span><br><span class="line">            d[i] = <span class="number">0</span>;</span><br><span class="line">            fa[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;\n%c&quot;</span>,&amp;command);</span><br><span class="line">            <span class="comment">//cin&gt;&gt; command;</span></span><br><span class="line">            <span class="keyword">if</span>(command == <span class="string">&#x27;O&#x27;</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span>(command == <span class="string">&#x27;E&#x27;</span>) &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">                <span class="built_in">Find</span>(x);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,d[x]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">                fa[x] = y;</span><br><span class="line">                d[x] = <span class="built_in">abs</span>(y - x) % <span class="number">1000</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/UvaLive-3027/" data-id="ckoa7pys50000qotlhb2be2ns" data-title="UvaLive 3027" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Uva-11181" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/04/Uva-11181/" class="article-date">
+  <time class="dt-published" datetime="2021-05-04T07:43:45.000Z" itemprop="datePublished">2021-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/04/Uva-11181/">Uva 11181</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVA-11181">Uva 11181</a><br>卧槽，人傻了。<br>是真的没想到，次次提交有BUG</p>
+<p>题意：n 个人购物， 每个人购物的单独概率分别为 p[i]<br>在 r 个人购物的情况下，求每个人购物的概率。 </p>
+<p><strong>Tutorial</strong>:<br>嫖了题解，不过自己写的时候<em><strong>Wa</strong></em>了太多次<br>既然要求在R个人购物的情况下，每个人购物的概率，事件 A|B<br>就要先求 在全部情况下即R个人购物的概率和。 事件A<br>ans = P(A|B) / P(A)</p>
+<p>用 dfs 模拟 n 个 人中 r 个人购物，<br>每次组成 R 人时 ， 对当前 P(A|B) 累加，同时对 P(A) 累加</p>
+<p>ENDing</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> p[N],ans[N],G;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> n,r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> choose)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(choose == r)&#123;</span><br><span class="line">        <span class="keyword">double</span> temp = <span class="number">1.0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n ;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(vis[i]) temp *= p[i];</span><br><span class="line">               <span class="keyword">else</span> temp *= (<span class="number">1</span> - p[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ;i++)</span><br><span class="line">           <span class="keyword">if</span>(vis[i]) ans[i]+=temp;</span><br><span class="line">        G += temp;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(pos &gt; n) <span class="keyword">return</span> ;</span><br><span class="line">      <span class="keyword">if</span>(n - pos + <span class="number">1</span> + choose &lt; r) <span class="keyword">return</span> ;</span><br><span class="line">           vis[pos] = <span class="literal">true</span>;</span><br><span class="line">          <span class="built_in">dfs</span>(pos+<span class="number">1</span>,choose+<span class="number">1</span>);</span><br><span class="line">           vis[pos] = <span class="literal">false</span>;</span><br><span class="line">          <span class="built_in">dfs</span>(pos+<span class="number">1</span>,choose);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> K = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt; n &gt;&gt; r &amp;&amp; !(n == <span class="number">0</span> &amp;&amp; r == <span class="number">0</span>))&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">            cin&gt;&gt; p[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">            ans[i] = <span class="number">0.0</span>,vis[i] = <span class="literal">false</span>;</span><br><span class="line">            G = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;Case &quot;</span> &lt;&lt; K++ &lt;&lt; <span class="string">&quot;:&quot;</span>&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n ; i++)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%.6lf\n&quot;</span>,ans[i]/G);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Uva太♂了，吐了<br>BUG++</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/04/Uva-11181/" data-id="ckoa7pysa0002qotl24yk8c2q" data-title="Uva 11181" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Uva-11762" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/03/Uva-11762/" class="article-date">
+  <time class="dt-published" datetime="2021-05-03T11:40:04.000Z" itemprop="datePublished">2021-05-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/03/Uva-11762/">Uva 11762</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[Race to 1](<a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVA-11762">Race to 1 - UVA 11762 - Virtual Judge (z180.cn)</a>)</p>
+<p>啊，我太菜了</p>
+<p><del>待补，太累了</del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> prime[N];</span><br><span class="line"><span class="keyword">double</span> f[N];</span><br><span class="line"><span class="comment">// 艹，我又以为自己可以了。   心累.JPG</span></span><br><span class="line"><span class="comment">// f[x] = 1 + f[x] * _disable / all + xx / all ;</span></span><br><span class="line"><span class="comment">// all * f[x] = all + f[x] * _dis + xx;</span></span><br><span class="line"><span class="comment">// all + xx / all - _dis;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i  &lt; N; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i]) <span class="keyword">continue</span>;</span><br><span class="line">        prime[tot++] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i;  j &lt; N; j+=i)</span><br><span class="line">            vis[j] = <span class="literal">true</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(x == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">     <span class="keyword">if</span>( vis[x] ) <span class="keyword">return</span> f[x];</span><br><span class="line">     vis[x] = <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">int</span> child = <span class="number">0</span> ,g = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">double</span> &amp;ans = f[x];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot &amp;&amp; prime[i] &lt;= x; i++)&#123;</span><br><span class="line">        child++;</span><br><span class="line">        <span class="keyword">if</span>( x%prime[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            ans += <span class="built_in">solve</span>(x/prime[i]);</span><br><span class="line">            g++;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     ans = (ans + child) / g;</span><br><span class="line">     <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="comment">// i am sb</span></span><br><span class="line">    <span class="keyword">int</span> k,x;</span><br><span class="line">    cin&gt;&gt;k;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; N; j++) vis[j] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; k ; i++)&#123;</span><br><span class="line">        <span class="comment">//scanf(&quot;%d&quot;,&amp;x);</span></span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %.7lf\n&quot;</span>,i+<span class="number">1</span>,<span class="built_in">solve</span>(x));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/03/Uva-11762/" data-id="ckoa7pys90001qotlgpppdmla" data-title="Uva 11762" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CF274A" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/02/CF274A/" class="article-date">
@@ -439,158 +570,11 @@
 
 
   
-    <article id="post-797B-Odd-sum" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/09/797B-Odd-sum/" class="article-date">
-  <time class="dt-published" datetime="2021-04-09T05:46:36.000Z" itemprop="datePublished">2021-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/09/797B-Odd-sum/">797B. Odd sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/797/B">797.B Odd sum</a> </p>
-<p><strong>题意</strong>：给你长度为n的序列，序列中的每一个数字在 -1^14  到 1^14之间。</p>
-<p>​          让你求一个子序列使得和为奇数，且最大。</p>
-<p>​          因为要奇数和最大，只要选奇数个大于0奇数，所有大于0的偶数即可。  </p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e5</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; evenNum,oddNum;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i  &lt; n ;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        <span class="keyword">if</span>((a[i] + mod)%<span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">            oddNum.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            evenNum.<span class="built_in">push_back</span>(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    ll Mx = <span class="number">0</span> - mod,tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">sort</span>(oddNum.<span class="built_in">begin</span>(),oddNum.<span class="built_in">end</span>());</span><br><span class="line">    <span class="built_in">sort</span>(evenNum.<span class="built_in">begin</span>(),evenNum.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;  i &lt; evenNum.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(evenNum[i] &gt; <span class="number">0</span>) ans+=evenNum[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = oddNum.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span> ; i--)&#123;</span><br><span class="line">        tmp += oddNum[i];</span><br><span class="line">        <span class="keyword">if</span>(tmp%<span class="number">2</span>) &#123;</span><br><span class="line">            Mx = <span class="built_in">max</span>(Mx,tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans + Mx &lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">   <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/09/797B-Odd-sum/" data-id="cknblbsqg0001m0tlhmq1asul" data-title="797B. Odd sum" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CF1132F-区间dp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/08/CF1132F-%E5%8C%BA%E9%97%B4dp/" class="article-date">
-  <time class="dt-published" datetime="2021-04-08T04:23:02.000Z" itemprop="datePublished">2021-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/08/CF1132F-%E5%8C%BA%E9%97%B4dp/">CF1132F 区间dp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1132/F">click me to solve the problem</a></p>
-<p>区间DP</p>
-<p>嗯，太难了。放弃了</p>
-<p>等先入门几道简单的再来看看吧，</p>
-<p>坐等<strong>update</strong></p>
-<p>本来准备放大佬的代码的，但是又想这样的话以后我肯定要嫖</p>
-<p>so就这样吧</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/08/CF1132F-%E5%8C%BA%E9%97%B4dp/" data-id="ckn8l52yw0000r8tlgqff0qj5" data-title="CF1132F 区间dp" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CF1499C" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/07/CF1499C/" class="article-date">
-  <time class="dt-published" datetime="2021-04-06T16:25:17.000Z" itemprop="datePublished">2021-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/07/CF1499C/">CF1499C</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1499/C">CF 1499C</a></p>
-<p>题意：你在（0,0） 点， 让你花费最小到 （n,n）</p>
-<p>​           最多可以转向n - 1 次  <del>貌似作用不大坐等update</del></p>
-<p>​           可以在 x 轴 ， y 轴 贪心地选取最小值贡献最多次。</p>
-<blockquote>
-<p>最多次即 ( n  - 已选的数量)</p>
-<blockquote>
-<p>注意x y 方向互不干扰，都需要单独统计</p>
-</blockquote>
-</blockquote>
-<p>​            每次更新即可。 </p>
-<p>然后发现晚上不能写题，wa 了很长时间。</p>
-<p>累死了，我以为我一发就能AC。</p>
-<p>实际上又要嫖题解。</p>
-<p><del>爷辈结</del>  </p>
-<blockquote>
-<p>爷的一辈子结束了</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mx = <span class="number">1e7</span>;</span><br><span class="line">ll a[N];</span><br><span class="line">ll ans[<span class="number">3</span>];</span><br><span class="line">ll pre[N];</span><br><span class="line">ll num[<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    num[<span class="number">0</span>] = n ;</span><br><span class="line">    num[<span class="number">1</span>] = n ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n; i++)&#123;</span><br><span class="line">        cin&gt;&gt; a[i];</span><br><span class="line">        pre[i] = pre[i<span class="number">-1</span>] + a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    ans[<span class="number">0</span>] = inf;</span><br><span class="line">    ans[<span class="number">1</span>] = inf;</span><br><span class="line">    ll res  = inf;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">       ans[i%<span class="number">2</span>] = <span class="built_in">min</span>(ans[i%<span class="number">2</span>],a[i]);</span><br><span class="line">       num[i%<span class="number">2</span>]--;</span><br><span class="line">       <span class="keyword">if</span>(i &gt;= <span class="number">2</span>) res = <span class="built_in">min</span>(res, pre[i] + num[<span class="number">0</span>]*ans[<span class="number">0</span>] + num[<span class="number">1</span>]*ans[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">   <span class="keyword">int</span> t;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/07/CF1499C/" data-id="ckn699kpw0000pwtl2rj0dqtj" data-title="CF1499C" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -622,23 +606,23 @@
       <ul>
         
           <li>
+            <a href="/2021/05/04/UvaLive-3027/">UvaLive 3027</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/04/Uva-11181/">Uva 11181</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/03/Uva-11762/">Uva 11762</a>
+          </li>
+        
+          <li>
             <a href="/2021/05/02/CF274A/">CF274A</a>
           </li>
         
           <li>
             <a href="/2021/04/18/UVA-11584/">UVA 11584</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/17/UVA-11400/">UVA 11400</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/14/CF1461CRandom-Events/">CF1461CRandom Events</a>
-          </li>
-        
-          <li>
-            <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/">CF1105CAyoub and Lost Array</a>
           </li>
         
       </ul>
