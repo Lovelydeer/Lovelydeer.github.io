@@ -77,6 +77,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UVA-11584" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/18/UVA-11584/" class="article-date">
+  <time class="dt-published" datetime="2021-04-18T05:11:13.000Z" itemprop="datePublished">2021-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/18/UVA-11584/">UVA 11584</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。</p>
+<p>嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。<br>要哮着做题，这些所谓的题目万变不离其中，<br>大致就是我不会的，其他人都会的 诸如此类的东西罢了。<br>🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺</p>
+<p>嗯~ o(<em>￣▽￣</em>)o<br>真的，我看这题就懵了，完全想不到dp的思路。<br>即使已经知道这道题目是线性dp的练习题。<br>既然要求整段字符串的性质，即总的回文串最少。<br>看看能不能由前一段递推过来。<br>ps：看完题解之后，由了一丝丝感触，<strong>But</strong>并没什么卵用<br>    因为一做题就会白给。WDNMD</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = <span class="built_in">min</span>(dp[j] + (s[j] ~ s[i])是不是回文串)；</span><br><span class="line">是就 +<span class="number">1</span>，否则就不应该参与比较。</span><br><span class="line">我们再想这样就是<span class="built_in">O</span>(n^<span class="number">3</span>)，因为还要花费<span class="built_in">O</span>(n)去判断回文串。</span><br><span class="line">可以预处理回文串&#123;同样利用dp&#125;</span><br></pre></td></tr></table></figure>
+<p>en，这大概就是我的想法。等下 see see code</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UVa11584 Partitioning by Palindromes</span></span><br><span class="line"><span class="comment">// Rujia Liu</span></span><br><span class="line"><span class="comment">// This code is slightly different from the book.</span></span><br><span class="line"><span class="comment">// It  uses memoization to judge whether s[i..j] is a palindrome.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, kase, vis[maxn][maxn], p[maxn][maxn], d[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_palindrome</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(i &gt;= j) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s[i] != s[j]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(vis[i][j] == kase) <span class="keyword">return</span> p[i][j];</span><br><span class="line">  vis[i][j] = kase;</span><br><span class="line">  p[i][j] = <span class="built_in">is_palindrome</span>(i+<span class="number">1</span>, j<span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">return</span> p[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> T;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">  <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(vis));</span><br><span class="line">  <span class="keyword">for</span>(kase = <span class="number">1</span>; kase &lt;= T; kase++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s+<span class="number">1</span>);</span><br><span class="line">    n = <span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      d[i] = i+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">is_palindrome</span>(j+<span class="number">1</span>, i)) d[i] = <span class="built_in">min</span>(d[i], d[j] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/18/UVA-11584/" data-id="ckqlzmxeh000bgktlgprt0yxm" data-title="UVA 11584" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-UVA-11400" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/17/UVA-11400/" class="article-date">
@@ -528,56 +584,6 @@
 
 
   
-    <article id="post-数据类型型的范围" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/" class="article-date">
-  <time class="dt-published" datetime="2021-03-27T04:36:48.000Z" itemprop="datePublished">2021-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/">数据类型型的范围</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>unsigned  int  0～4294967295  </p>
-<p>int  -2147483648～2147483647  (2*10^9)</p>
-<p>unsigned long 0～4294967295</p>
-<p>long  -2147483648～2147483647</p>
-<p>long long的最大值：9223372036854775807</p>
-<p>long long的最小值：-9223372036854775808</p>
-<p>unsigned long long的最大值：1844674407370955161</p>
-<p> __ int64的最大值：9223372036854775807__</p>
-<p> __int64的最小值：-9223372036854775808</p>
-<p>unsigned __int64的最大值：18446744073709551615</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/" data-id="ckqlzmxep000mgktl5j2l5per" data-title="数据类型型的范围" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -614,6 +620,10 @@
       <ul>
         
           <li>
+            <a href="/2021/09/07/layui-form/">layui-form</a>
+          </li>
+        
+          <li>
             <a href="/2021/09/04/wifi/">wifi</a>
           </li>
         
@@ -627,10 +637,6 @@
         
           <li>
             <a href="/2021/09/04/python-pyautogui/">python--pyautogui</a>
-          </li>
-        
-          <li>
-            <a href="/2021/05/06/UvaLive-4329/">UvaLive 4329</a>
           </li>
         
       </ul>
