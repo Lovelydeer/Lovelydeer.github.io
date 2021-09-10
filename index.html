@@ -77,6 +77,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/10/Java/" class="article-date">
+  <time class="dt-published" datetime="2021-09-10T01:43:32.000Z" itemprop="datePublished">2021-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/10/Java/">Java-</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;WorkStateDet&gt; All =  <span class="keyword">new</span> ArrayList&lt;WorkStateDet&gt;();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    		   Connection con = DataBase.getConn();</span><br><span class="line">    	  	   Statement  st  = <span class="keyword">null</span>;</span><br><span class="line">    	  	   ResultSet  rs  = <span class="keyword">null</span>;</span><br><span class="line">    	       String sql = <span class="string">&quot;select * from Account  where  Id   = &quot;</span>+ Id + <span class="string">&quot;;&quot;</span>;</span><br><span class="line">    	       st = con.createStatement();</span><br><span class="line">    	       rs = st.executeQuery(sql);</span><br><span class="line">    	       </span><br><span class="line">    	       <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">    	       WorkStateDet p = <span class="keyword">new</span> WorkStateDet();</span><br><span class="line">    	       p.setId(rs.getString(<span class="string">&quot;Id&quot;</span>));</span><br><span class="line">    	       p.setDepId(rs.getString(<span class="string">&quot;DepId&quot;</span>));</span><br><span class="line">    	       p.setTime(rs.getString(<span class="string">&quot;Time&quot;</span>));</span><br><span class="line">    	       p.setLate(rs.getInt(<span class="string">&quot;Late&quot;</span>));</span><br><span class="line">    	       p.setNotWork(rs.getInt(<span class="string">&quot;NotWork&quot;</span>));</span><br><span class="line">    	       p.setWeekendOT(rs.getInt(<span class="string">&quot;WeekendOT&quot;</span>));</span><br><span class="line">    	       p.setHolidayOt(rs.getInt(<span class="string">&quot;HolidayOt&quot;</span>));</span><br><span class="line">    	       p.setSpecial(rs.getInt(<span class="string">&quot;Special&quot;</span>));</span><br><span class="line">    	       p.setLog(rs.getString(<span class="string">&quot;Log&quot;</span>));</span><br><span class="line">    	       All.add(p);</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       rs.close();</span><br><span class="line">    	       st.close();</span><br><span class="line">    	       con.close();</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/10/Java/" data-id="cktdpc5gt000084tl9z2ne1m5" data-title="Java-" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Javaweb-网页跳转" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/10/Javaweb-%E7%BD%91%E9%A1%B5%E8%B7%B3%E8%BD%AC/" class="article-date">
+  <time class="dt-published" datetime="2021-09-10T01:01:59.000Z" itemprop="datePublished">2021-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/10/Javaweb-%E7%BD%91%E9%A1%B5%E8%B7%B3%E8%BD%AC/">Javaweb--网页跳转</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//转发</span></span><br><span class="line">RequestDispatcher dis  = request.getRequestDispatcher(<span class="string">&quot;DelDep.jsp&quot;</span>);</span><br><span class="line">dis.forward(request, response);</span><br><span class="line"></span><br><span class="line"><span class="comment">//重定向</span></span><br><span class="line">response.sendRedirect(<span class="string">&quot;DelAcc.jsp&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/10/Javaweb-%E7%BD%91%E9%A1%B5%E8%B7%B3%E8%BD%AC/" data-id="cktdpc5gv000184tl8jlsgm9u" data-title="Javaweb--网页跳转" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-layui-form" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/09/07/layui-form/" class="article-date">
@@ -99,7 +179,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>  <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">action</span> = <span class="string">&quot;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> =<span class="string">&quot;text&quot;</span> <span class="attr">name</span> = <span class="string">&quot;test&quot;</span> <span class="attr">required</span> <span class="attr">lay-verify</span>=<span class="string">&quot;go&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;submit&quot;</span> <span class="attr">lay-submit</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">layui.use(<span class="string">&#x27;form&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">	  <span class="keyword">var</span> form = layui.form;</span></span><br><span class="line"><span class="javascript">	  <span class="comment">//各种基于事件的操作，下面会有进一步介绍</span></span></span><br><span class="line">form.verify(&#123;</span><br><span class="line">	 go:[</span><br><span class="line">		    /^[\S]&#123;6,12&#125;$/</span><br><span class="line"><span class="javascript">		    ,<span class="string">&#x27;密码必须6到12位，且不能出现空格&#x27;</span></span></span><br><span class="line">	     ] ,</span><br><span class="line">&#125;); </span><br><span class="line">&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>  <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">action</span> = <span class="string">&quot;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> =<span class="string">&quot;text&quot;</span> <span class="attr">name</span> = <span class="string">&quot;test&quot;</span> <span class="attr">required</span> <span class="attr">lay-verify</span>=<span class="string">&quot;go&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;submit&quot;</span> <span class="attr">lay-submit</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">layui.use(<span class="string">&#x27;form&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">	  <span class="keyword">var</span> form = layui.form;</span></span><br><span class="line"><span class="javascript">	  <span class="comment">//各种基于事件的操作，下面会有进一步介绍</span></span></span><br><span class="line">form.verify(&#123;</span><br><span class="line">	 go:[</span><br><span class="line">		    /^[\S]&#123;6,12&#125;$/</span><br><span class="line"><span class="javascript">		    ,<span class="string">&#x27;密码必须6到12位，且不能出现空格&#x27;</span></span></span><br><span class="line">	     ] ,</span><br><span class="line">&#125;); </span><br><span class="line">&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">required (必填项)</span><br><span class="line">phone（手机号）</span><br><span class="line">email（邮箱）</span><br><span class="line">url（网址）</span><br><span class="line">number（数字）</span><br><span class="line">date（日期）</span><br><span class="line">identity(身份证)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -406,100 +486,11 @@
 
 
   
-    <article id="post-Uva-11762" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/03/Uva-11762/" class="article-date">
-  <time class="dt-published" datetime="2021-05-03T11:40:04.000Z" itemprop="datePublished">2021-05-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/03/Uva-11762/">Uva 11762</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>[Race to 1](<a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVA-11762">Race to 1 - UVA 11762 - Virtual Judge (z180.cn)</a>)</p>
-<p>啊，我太菜了</p>
-<p><del>待补，太累了</del></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> prime[N];</span><br><span class="line"><span class="keyword">double</span> f[N];</span><br><span class="line"><span class="comment">// 艹，我又以为自己可以了。   心累.JPG</span></span><br><span class="line"><span class="comment">// f[x] = 1 + f[x] * _disable / all + xx / all ;</span></span><br><span class="line"><span class="comment">// all * f[x] = all + f[x] * _dis + xx;</span></span><br><span class="line"><span class="comment">// all + xx / all - _dis;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i  &lt; N; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i]) <span class="keyword">continue</span>;</span><br><span class="line">        prime[tot++] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i;  j &lt; N; j+=i)</span><br><span class="line">            vis[j] = <span class="literal">true</span>;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(x == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">0.0</span>;</span><br><span class="line">     <span class="keyword">if</span>( vis[x] ) <span class="keyword">return</span> f[x];</span><br><span class="line">     vis[x] = <span class="literal">true</span>;</span><br><span class="line">     <span class="keyword">int</span> child = <span class="number">0</span> ,g = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">double</span> &amp;ans = f[x];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot &amp;&amp; prime[i] &lt;= x; i++)&#123;</span><br><span class="line">        child++;</span><br><span class="line">        <span class="keyword">if</span>( x%prime[i] == <span class="number">0</span>) &#123;</span><br><span class="line">            ans += <span class="built_in">solve</span>(x/prime[i]);</span><br><span class="line">            g++;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     ans = (ans + child) / g;</span><br><span class="line">     <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="comment">// i am sb</span></span><br><span class="line">    <span class="keyword">int</span> k,x;</span><br><span class="line">    cin&gt;&gt;k;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; N; j++) vis[j] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; k ; i++)&#123;</span><br><span class="line">        <span class="comment">//scanf(&quot;%d&quot;,&amp;x);</span></span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Case %d: %.7lf\n&quot;</span>,i+<span class="number">1</span>,<span class="built_in">solve</span>(x));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/03/Uva-11762/" data-id="ckqlzmxej000dgktlfgjmcg1j" data-title="Uva 11762" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CF274A" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/02/CF274A/" class="article-date">
-  <time class="dt-published" datetime="2021-05-02T13:51:28.000Z" itemprop="datePublished">2021-05-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/02/CF274A/">CF274A</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/274/A">A. k-Multiple Free Set</a><br>嗯哼，当我jio得自己又可以得时候，<br>又出了新 BUG<br>这TM写个der啊<br>还好，第二次自信满满得交得时候过了<br>要不然我心态肯定崩了</p>
-<p><strong>题意</strong>： 大致就是给你 n  个不重复的正数<del>distinct positive integers</del>，<br>                     要让你构造一个最大集合，<br>             这个集合里不能存在 x,y 且 y = x * k。</p>
-<p>Tutorial:<br>显然从小到大 或者 从大到小更简单。<br>因为使得选择的序列有序了，主要是与人的思考相对应，更易懂。<br>我们要选择题目所给的数字集合，<br>就要从某个存在的数字开始，依次看存不存在它的 k 倍，<br>所以应该是tot - tot/2 , 但这种情况会少算。<br>因为数字的倍数可能不会连在一起，就不一定是tot  - tot/2<br>因此我们应该每次记录先前有没有它的1/k 倍，如果有就不可加。<br>否则可以。<br>这样复杂度应该为 n * log2(MAX_NUM) + n * log2(n)</p>
-<p>但但考虑 k == 1 的情况 ， 它就跳不出循环了。显然会T了</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line">ll a[N];</span><br><span class="line">map&lt;ll , <span class="keyword">int</span> &gt; Map;</span><br><span class="line">map&lt;ll , <span class="keyword">int</span> &gt; vis;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> n,k;</span><br><span class="line">     <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">     cin&gt;&gt; n &gt;&gt; k;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        Map[a[i]] = <span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">sort</span>(a,a+n);</span><br><span class="line">     <span class="keyword">if</span>(k == <span class="number">1</span>) &#123; cout&lt;&lt; n &lt;&lt;endl;  <span class="keyword">return</span> ;&#125;</span><br><span class="line">     ll limit = a[n<span class="number">-1</span>];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>( vis[a[i]] ) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">        ll temp = a[i];</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">while</span>(temp &lt;= limit)&#123;</span><br><span class="line">             <span class="keyword">if</span>( Map[temp] ) &#123;</span><br><span class="line">                <span class="keyword">if</span>(flag) ans++;</span><br><span class="line">                flag = !flag;</span><br><span class="line">             &#125;</span><br><span class="line">             <span class="keyword">else</span> flag = <span class="literal">true</span>;</span><br><span class="line">             vis[temp] = <span class="number">1</span>;</span><br><span class="line">             temp *= k;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>ENDING</p>
-<p>好久没写代码了，以前积极性还高一点。<br>可能是因为被游戏吸引了吧，还有就是觉得没什么动力。<br>自己这么菜，没什么夺奖的概率。<br>不过天梯赛还差15分就能得个人奖了，可惜，不过我已是超常发挥了。<br>hh,又跑题了<br>貌似学业上又又有很多很水的科目，而且上课我也听不进去<br>不知道为什么，是真的不想听，<br>淦 LOSER IS MYASELF 。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/02/CF274A/" data-id="ckqlzmxee0007gktl4acz3jto" data-title="CF274A" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -531,6 +522,14 @@
       <ul>
         
           <li>
+            <a href="/2021/09/10/Java/">Java-</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/10/Javaweb-%E7%BD%91%E9%A1%B5%E8%B7%B3%E8%BD%AC/">Javaweb--网页跳转</a>
+          </li>
+        
+          <li>
             <a href="/2021/09/07/layui-form/">layui-form</a>
           </li>
         
@@ -540,14 +539,6 @@
         
           <li>
             <a href="/2021/09/04/python-subprocess/">python--subprocess</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/04/tmp/">tmp</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/04/python-pyautogui/">python--pyautogui</a>
           </li>
         
       </ul>
