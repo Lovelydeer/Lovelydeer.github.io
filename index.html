@@ -77,6 +77,94 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-matplotlib" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/16/python-matplotlib/" class="article-date">
+  <time class="dt-published" datetime="2021-09-16T07:32:46.000Z" itemprop="datePublished">2021-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/16/python-matplotlib/">python-matplotlib</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]  <span class="comment"># 用来正常显示中文标签</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>  <span class="comment"># 用来正常显示负号</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">pyplot.figure() 一些参数</span><br><span class="line">num：窗口属性<span class="built_in">id</span></span><br><span class="line">figsize: 大小 (,)</span><br><span class="line">dpi: 分辨率  <span class="built_in">int</span></span><br><span class="line">facecolor: 窗口背景色 </span><br><span class="line">               b:蓝色</span><br><span class="line">               r:红色</span><br><span class="line">               g:绿色</span><br><span class="line">               c:青色</span><br><span class="line">               m:平红色</span><br><span class="line">               y:黄色</span><br><span class="line">               k:黑色 </span><br><span class="line">               w:白色</span><br><span class="line">          <span class="comment">#000000 ~  #FFFFFF</span></span><br><span class="line">edgecolor:窗口边框色</span><br><span class="line">frameon:</span><br><span class="line">clrar:</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 折线图</span></span><br><span class="line"></span><br><span class="line">x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">y1 = [<span class="number">2.3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">y2 = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">20</span>]</span><br><span class="line">y3 = [<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>]</span><br><span class="line">plt.figure()</span><br><span class="line">plt.title(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">plt.plot(x,y1,<span class="string">&#x27;bs-&#x27;</span>,label=<span class="string">&#x27;god&#x27;</span>)</span><br><span class="line">plt.plot(x,y2,<span class="string">&#x27;rp--&#x27;</span>,label=<span class="string">&#x27;me&#x27;</span>)</span><br><span class="line">plt.plot(x,y3,<span class="string">&#x27;cx-.&#x27;</span>,label=<span class="string">&#x27;you&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper left&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/16/python-matplotlib/" data-id="ckts1wylf0001xktl6zxa1v43" data-title="python-matplotlib" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Month" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/11/Month/" class="article-date">
+  <time class="dt-published" datetime="2021-09-11T06:29:00.000Z" itemprop="datePublished">2021-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/11/Month/">Month</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">一月January ，</span><br><span class="line">二月february ，</span><br><span class="line">三月March ，</span><br><span class="line">四月April ，</span><br><span class="line">五月May ，</span><br><span class="line">六月June ，</span><br><span class="line">七月July ，</span><br><span class="line">八月August ，</span><br><span class="line">九月September ，</span><br><span class="line">十月October ，</span><br><span class="line">十一月November ，</span><br><span class="line">十二月December。</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/11/Month/" data-id="ckts1wyla0000xktl29ay21pw" data-title="Month" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/09/10/Java/" class="article-date">
@@ -339,7 +427,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyautogui</span><br><span class="line"><span class="comment">#设置函数运行间隔时间 ，单位秒</span></span><br><span class="line">pyautogui.PAUSE = <span class="number">1</span></span><br><span class="line"><span class="comment">#启动自动防故障功能</span></span><br><span class="line">pyautogui.FAILSAFE = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 获取屏幕分辨率，返回值:x坐标，y坐标 的元组</span></span><br><span class="line">pyautogui.size()</span><br><span class="line">width , height = pyautogui.size()</span><br><span class="line"><span class="comment"># x 坐标， y 坐标， 移动所消耗的时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动到指定位置</span></span><br><span class="line">pyautogui.moveTo(<span class="number">100</span>, <span class="number">100</span>, duration=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment">#移动到相对于当前位置</span></span><br><span class="line">pyautogui.moveRel(<span class="number">0</span>, -<span class="number">100</span>, duration=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment">#获取当前鼠标的位置</span></span><br><span class="line">pyautogui.position()</span><br><span class="line"></span><br><span class="line"><span class="comment">#单击鼠标 相当于 mouseDown mouseUp</span></span><br><span class="line"><span class="comment">#其中第三个参数默认为左键</span></span><br><span class="line"><span class="comment"># 参数 x坐标 ，y坐标， 点击左键or中间or右键 (button=&#x27;left&#x27;,button=&#x27;Middle&#x27;,button=&#x27;Right&#x27;)</span></span><br><span class="line">pyautogui.click(<span class="number">10</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#滚动鼠标</span></span><br><span class="line">pyautogui.scroll(<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#函 数 只 执 行 双 击 鼠 标 左 键 。</span></span><br><span class="line">pyautogui.doubleClick() </span><br><span class="line"><span class="comment">#函数将分别执行双击右键和双击中键。</span></span><br><span class="line">pyautogui.rightClick() </span><br><span class="line">pyautogui.middleClick() </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pyautogui</span><br><span class="line"><span class="comment">#设置函数运行间隔时间 ，单位秒</span></span><br><span class="line">pyautogui.PAUSE = <span class="number">1</span></span><br><span class="line"><span class="comment">#启动自动防故障功能</span></span><br><span class="line">pyautogui.FAILSAFE = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 获取屏幕分辨率，返回值:x坐标，y坐标 的元组</span></span><br><span class="line">pyautogui.size()</span><br><span class="line">width , height = pyautogui.size()</span><br><span class="line"><span class="comment"># x 坐标， y 坐标， 移动所消耗的时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#移动到指定位置</span></span><br><span class="line">pyautogui.moveTo(<span class="number">100</span>, <span class="number">100</span>, duration=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment">#移动到相对于当前位置</span></span><br><span class="line">pyautogui.moveRel(<span class="number">0</span>, -<span class="number">100</span>, duration=<span class="number">0.25</span>)</span><br><span class="line"><span class="comment">#获取当前鼠标的位置</span></span><br><span class="line">pyautogui.position()</span><br><span class="line"></span><br><span class="line"><span class="comment">#单击鼠标 相当于 mouseDown mouseUp</span></span><br><span class="line"><span class="comment">#其中第三个参数默认为左键</span></span><br><span class="line"><span class="comment"># 参数 x坐标 ，y坐标， 点击左键or中间or右键 (button=&#x27;left&#x27;,button=&#x27;Middle&#x27;,button=&#x27;Right&#x27;)</span></span><br><span class="line">pyautogui.click(<span class="number">10</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#滚动鼠标</span></span><br><span class="line">pyautogui.scroll(<span class="number">200</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#函 数 只 执 行 双 击 鼠 标 左 键 。</span></span><br><span class="line">pyautogui.doubleClick() </span><br><span class="line"><span class="comment">#函数将分别执行双击右键和双击中键。</span></span><br><span class="line">pyautogui.rightClick() </span><br><span class="line">pyautogui.middleClick()</span><br></pre></td></tr></table></figure>
 
 
       
@@ -398,94 +486,6 @@
 
 
   
-    <article id="post-UvaLive-3027" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/04/UvaLive-3027/" class="article-date">
-  <time class="dt-published" datetime="2021-05-04T15:17:29.000Z" itemprop="datePublished">2021-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/04/UvaLive-3027/">UvaLive 3027</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVALive-3027">UvaLive 3027 Corporative Network</a></p>
-<p>在优美的代码前，我就像一个SB<br>啊，被c的字符输入困扰了好久<br>久到离谱<br>到后面一直以为不是我的算法出错了，<br>BING 了一下，才发现我错了，😭😭😭😭~~~~</p>
-<p>题意：</p>
-<p><strong>Tutorial</strong>：<br>待补</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fa[N];</span><br><span class="line"><span class="keyword">int</span> d[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">( <span class="keyword">int</span> x )</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(fa[x] != x)&#123;</span><br><span class="line">        <span class="keyword">int</span> pos = <span class="built_in">Find</span>(fa[x]);</span><br><span class="line">        d[x] += d[fa[x]];</span><br><span class="line">        <span class="keyword">return</span> fa[x] = pos;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="keyword">int</span> t,num,x,y;</span><br><span class="line">    <span class="keyword">char</span> command;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= num; i++)&#123;</span><br><span class="line">            d[i] = <span class="number">0</span>;</span><br><span class="line">            fa[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;\n%c&quot;</span>,&amp;command);</span><br><span class="line">            <span class="comment">//cin&gt;&gt; command;</span></span><br><span class="line">            <span class="keyword">if</span>(command == <span class="string">&#x27;O&#x27;</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span>(command == <span class="string">&#x27;E&#x27;</span>) &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">                <span class="built_in">Find</span>(x);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,d[x]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;x,&amp;y);</span><br><span class="line">                fa[x] = y;</span><br><span class="line">                d[x] = <span class="built_in">abs</span>(y - x) % <span class="number">1000</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/04/UvaLive-3027/" data-id="ckqlzmxek000egktldn6hbi2o" data-title="UvaLive 3027" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Uva-11181" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/05/04/Uva-11181/" class="article-date">
-  <time class="dt-published" datetime="2021-05-04T07:43:45.000Z" itemprop="datePublished">2021-05-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/04/Uva-11181/">Uva 11181</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVA-11181">Uva 11181</a><br>卧槽，人傻了。<br>是真的没想到，次次提交有BUG</p>
-<p>题意：n 个人购物， 每个人购物的单独概率分别为 p[i]<br>在 r 个人购物的情况下，求每个人购物的概率。 </p>
-<p><strong>Tutorial</strong>:<br>嫖了题解，不过自己写的时候<em><strong>Wa</strong></em>了太多次<br>既然要求在R个人购物的情况下，每个人购物的概率，事件 A|B<br>就要先求 在全部情况下即R个人购物的概率和。 事件A<br>ans = P(A|B) / P(A)</p>
-<p>用 dfs 模拟 n 个 人中 r 个人购物，<br>每次组成 R 人时 ， 对当前 P(A|B) 累加，同时对 P(A) 累加</p>
-<p>ENDing</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> p[N],ans[N],G;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> n,r;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> pos,<span class="keyword">int</span> choose)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(choose == r)&#123;</span><br><span class="line">        <span class="keyword">double</span> temp = <span class="number">1.0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n ;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(vis[i]) temp *= p[i];</span><br><span class="line">               <span class="keyword">else</span> temp *= (<span class="number">1</span> - p[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ;i++)</span><br><span class="line">           <span class="keyword">if</span>(vis[i]) ans[i]+=temp;</span><br><span class="line">        G += temp;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span>(pos &gt; n) <span class="keyword">return</span> ;</span><br><span class="line">      <span class="keyword">if</span>(n - pos + <span class="number">1</span> + choose &lt; r) <span class="keyword">return</span> ;</span><br><span class="line">           vis[pos] = <span class="literal">true</span>;</span><br><span class="line">          <span class="built_in">dfs</span>(pos+<span class="number">1</span>,choose+<span class="number">1</span>);</span><br><span class="line">           vis[pos] = <span class="literal">false</span>;</span><br><span class="line">          <span class="built_in">dfs</span>(pos+<span class="number">1</span>,choose);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> K = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt; n &gt;&gt; r &amp;&amp; !(n == <span class="number">0</span> &amp;&amp; r == <span class="number">0</span>))&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">            cin&gt;&gt; p[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">            ans[i] = <span class="number">0.0</span>,vis[i] = <span class="literal">false</span>;</span><br><span class="line">            G = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">            cout&lt;&lt;<span class="string">&quot;Case &quot;</span> &lt;&lt; K++ &lt;&lt; <span class="string">&quot;:&quot;</span>&lt;&lt;endl;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n ; i++)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%.6lf\n&quot;</span>,ans[i]/G);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Uva太♂了，吐了<br>BUG++</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/04/Uva-11181/" data-id="ckqlzmxei000cgktl9dfibrmt" data-title="Uva 11181" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -522,6 +522,14 @@
       <ul>
         
           <li>
+            <a href="/2021/09/16/python-matplotlib/">python-matplotlib</a>
+          </li>
+        
+          <li>
+            <a href="/2021/09/11/Month/">Month</a>
+          </li>
+        
+          <li>
             <a href="/2021/09/10/Java/">Java-</a>
           </li>
         
@@ -531,14 +539,6 @@
         
           <li>
             <a href="/2021/09/07/layui-form/">layui-form</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/04/wifi/">wifi</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/04/python-subprocess/">python--subprocess</a>
           </li>
         
       </ul>
