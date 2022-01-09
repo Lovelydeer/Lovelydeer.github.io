@@ -77,6 +77,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CF1105CAyoub-and-Lost-Array" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/" class="article-date">
+  <time class="dt-published" datetime="2021-04-14T05:03:49.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/14/CF1105CAyoub-and-Lost-Array/">CF1105CAyoub and Lost Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1105/C">CF 1105.C</a></p>
+<p>🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊🕊</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/14/CF1105CAyoub-and-Lost-Array/" data-id="ckqlzmxea0002gktlaz2c50ls" data-title="CF1105CAyoub and Lost Array" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-1307C-Cow-and-Message" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/10/1307C-Cow-and-Message/" class="article-date">
@@ -545,57 +585,6 @@
 
 
   
-    <article id="post-3-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/23/3-23/" class="article-date">
-  <time class="dt-published" datetime="2021-03-23T05:23:56.000Z" itemprop="datePublished">2021-03-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/23/3-23/">3.23</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="嗯哼，昨晚看了一题，发现很懵逼，就嫖了题解"><a href="#嗯哼，昨晚看了一题，发现很懵逼，就嫖了题解" class="headerlink" title="嗯哼，昨晚看了一题，发现很懵逼，就嫖了题解"></a>嗯哼，昨晚看了一题，发现很懵逼，就嫖了题解</h2><p>给定一颗树，让你涂色。</p>
-<p>要求： 任意起点到终点路径为3的路途中，三个顶点颜色不一样。</p>
-<p>​             求最小使用颜色种类数量 和 每个点的颜色。</p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/781/problem/A">CF  403  A </a></p>
-<p><del>我的思路</del>： 。。。。。。。。。</p>
-<p>实在是想不到，就如同昨天写那道与数学知识有关的题目，很无语。</p>
-<p>让我<strong>懵逼</strong>地描述一下<em><strong>Tutorial</strong></em>。</p>
-<p>对于当前点，不能与父节点重色，儿子节点的颜色也必须分配的不同。</p>
-<p>就这样，便能递归套娃了。</p>
-<p>最小颜色就看点的度数即可，最大加1。</p>
-<p>这样便能预处理了。</p>
-<hr>
-<p>当然也可以在递归的时候边着色边统计。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e18</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mx = <span class="number">1e7</span>;</span><br><span class="line"><span class="keyword">int</span> col[N];</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; g[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> st = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; g[u].<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> nxt = g[u][i];</span><br><span class="line">        <span class="keyword">if</span>(nxt == fa ) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">while</span>( ans[st] == col[u] || ans[st] == col[fa] ) st++;</span><br><span class="line">        col[nxt] = ans[st];</span><br><span class="line">        st++;</span><br><span class="line">        <span class="built_in">dfs</span>(nxt,u);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">int</span> u,v;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n ; i++)&#123;</span><br><span class="line">        cin&gt;&gt; u &gt;&gt; v;</span><br><span class="line">        g[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">        g[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ;i++)&#123;</span><br><span class="line">        tmp = <span class="built_in">max</span>( (<span class="keyword">int</span>)g[i].<span class="built_in">size</span>(), tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= tmp + <span class="number">1</span>; i++)&#123;</span><br><span class="line">        ans.<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">    col[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    col[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ;i++)&#123;</span><br><span class="line">        cout&lt;&lt;col[i]&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/23/3-23/" data-id="ckqlzmxe80001gktl44pc12yl" data-title="3.23" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -632,6 +621,10 @@
       <ul>
         
           <li>
+            <a href="/2022/01/09/Springboot-Email/">Springboot Email</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/08/%E6%9C%8D%E5%8A%A1%E5%99%A8-IMAP/">服务器 IMAP</a>
           </li>
         
@@ -645,10 +638,6 @@
         
           <li>
             <a href="/2021/09/11/Month/">Month</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/10/Java/">Java-</a>
           </li>
         
       </ul>
