@@ -77,6 +77,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CF1461CRandom-Events" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/14/CF1461CRandom-Events/" class="article-date">
+  <time class="dt-published" datetime="2021-04-14T05:04:59.000Z" itemprop="datePublished">2021-04-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/14/CF1461CRandom-Events/">CF1461CRandom Events</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1461/C">CF1461C</a></p>
+<p>题目大意：给你一个1~ n的排列。</p>
+<p>你有 <strong>p</strong> 的概率 对 1 — r 的所有元素排序，总共有<strong>m</strong>组。</p>
+<p>现在问你有多大的概率把原排列改造成升序排列。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">bool</span> Yes[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        Yes[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> tot = n;</span><br><span class="line">    Yes[n] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(a[tot<span class="number">-1</span>] == tot &amp;&amp; tot &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        Yes[tot<span class="number">-1</span>] = <span class="literal">true</span>;</span><br><span class="line">        tot--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">double</span> p;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i++)&#123;</span><br><span class="line">        cin&gt;&gt; x &gt;&gt; p;</span><br><span class="line">        <span class="keyword">if</span>(Yes[x]) ans *= (<span class="number">1</span> - p);</span><br><span class="line">    &#125;</span><br><span class="line">    ans = <span class="number">1</span> - ans;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,(Yes[<span class="number">1</span>] ? <span class="number">1</span>: ans));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/14/CF1461CRandom-Events/" data-id="ckqlzmxec0005gktl1g3xgliz" data-title="CF1461CRandom Events" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CF1105CAyoub-and-Lost-Array" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/14/CF1105CAyoub-and-Lost-Array/" class="article-date">
@@ -518,73 +562,6 @@
 
 
   
-    <article id="post-队里有妹子啦" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/26/%E9%98%9F%E9%87%8C%E6%9C%89%E5%A6%B9%E5%AD%90%E5%95%A6/" class="article-date">
-  <time class="dt-published" datetime="2021-03-26T03:16:34.000Z" itemprop="datePublished">2021-03-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/26/%E9%98%9F%E9%87%8C%E6%9C%89%E5%A6%B9%E5%AD%90%E5%95%A6/">队里有妹子啦</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="又忘记markdow语法了，又要重新学习一下"><a href="#又忘记markdow语法了，又要重新学习一下" class="headerlink" title="又忘记markdow语法了，又要重新学习一下"></a>又忘记markdow语法了，又要重新学习一下</h2><h3 id="好了，记住几个就可以骚了"><a href="#好了，记住几个就可以骚了" class="headerlink" title="好了，记住几个就可以骚了"></a>好了，记住几个就可以骚了</h3><h5 id="并不需要太多，图片我还不会"><a href="#并不需要太多，图片我还不会" class="headerlink" title="并不需要太多，图片我还不会"></a>并不需要太多，图片我还不会</h5><hr>
-<p><del>现在进入正题</del></p>
-<p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1437/D">CF 会几个英语单词真的了不起</a></p>
-<blockquote>
-<p>Also, he knows that all children of each vertex were viewed in ascending order.</p>
-<blockquote>
-<p>淦，一开始没太注意，就搜了一下 ascending 的意思</p>
-<blockquote>
-<p>but 忘记看整段文字的意思了</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>然后就嫖了题解，<del>真香</del></p>
-<p>题目大意是：</p>
-<p>一个人在一颗树上做 BFS 算法，做完了之后得到一个序列。</p>
-<p>并且已知这颗树上的每个节点的儿子节点是递增的。</p>
-<p>让你求这棵树上可能的最小高度。</p>
-<ul>
-<li><p>嗯，每个节点的高度都是由父节点转移而来，只要动态地转移高度即可，</p>
-</li>
-<li><p>但题目又让我们求最小高度，我们贪心地使得每个节点的儿子节点构成一个最长子序列。</p>
-</li>
-<li><p>然后就get solution。</p>
-<div align = "left" >
-    <img src = "5.jpg" width = 50% height = 50 % />
-</div></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">double</span> ld;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e18</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mx = <span class="number">1e7</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">int</span> h[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        cin&gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    h[a[<span class="number">1</span>]] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> st = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n;)&#123;</span><br><span class="line">        pos++;</span><br><span class="line">        st = a[pos];</span><br><span class="line">        h[a[i]] = h[st] + <span class="number">1</span>;</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">while</span>( i &lt;= n  &amp;&amp; a[i - <span class="number">1</span>] &lt;= a[i] )&#123;</span><br><span class="line">            h[a[i]] = h[st] + <span class="number">1</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ;i++)&#123;</span><br><span class="line">        ans= <span class="built_in">max</span>(h[a[i]],ans);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/26/%E9%98%9F%E9%87%8C%E6%9C%89%E5%A6%B9%E5%AD%90%E5%95%A6/" data-id="ckqlzmxeq000ngktlb2huaace" data-title="队里有妹子啦" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -621,6 +598,10 @@
       <ul>
         
           <li>
+            <a href="/2022/01/13/2022-%E5%AF%92%E5%81%87%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92/">2022-寒假游戏计划</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/09/Springboot-Email/">Springboot Email</a>
           </li>
         
@@ -634,10 +615,6 @@
         
           <li>
             <a href="/2021/09/16/python-matplotlib/">python-matplotlib</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/11/Month/">Month</a>
           </li>
         
       </ul>

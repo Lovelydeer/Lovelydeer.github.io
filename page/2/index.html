@@ -77,6 +77,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-subprocess" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/09/04/python-subprocess/" class="article-date">
+  <time class="dt-published" datetime="2021-09-04T05:42:10.000Z" itemprop="datePublished">2021-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/09/04/python-subprocess/">python--subprocess</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> subprocess</span><br><span class="line">subprocess.Popen([<span class="string">&#x27;C:\\Program Files\\Typora\\Typora.exe&#x27;</span>, <span class="string">&#x27;hello.py&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/09/04/python-subprocess/" data-id="ckt5d3lwf00000gtlc9kafimd" data-title="python--subprocess" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-tmp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/09/04/tmp/" class="article-date">
@@ -489,50 +529,6 @@
 
 
   
-    <article id="post-CF1461CRandom-Events" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/14/CF1461CRandom-Events/" class="article-date">
-  <time class="dt-published" datetime="2021-04-14T05:04:59.000Z" itemprop="datePublished">2021-04-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/14/CF1461CRandom-Events/">CF1461CRandom Events</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1461/C">CF1461C</a></p>
-<p>题目大意：给你一个1~ n的排列。</p>
-<p>你有 <strong>p</strong> 的概率 对 1 — r 的所有元素排序，总共有<strong>m</strong>组。</p>
-<p>现在问你有多大的概率把原排列改造成升序排列。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">bool</span> Yes[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        Yes[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> tot = n;</span><br><span class="line">    Yes[n] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span>(a[tot<span class="number">-1</span>] == tot &amp;&amp; tot &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">        Yes[tot<span class="number">-1</span>] = <span class="literal">true</span>;</span><br><span class="line">        tot--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">double</span> p;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; m;i++)&#123;</span><br><span class="line">        cin&gt;&gt; x &gt;&gt; p;</span><br><span class="line">        <span class="keyword">if</span>(Yes[x]) ans *= (<span class="number">1</span> - p);</span><br><span class="line">    &#125;</span><br><span class="line">    ans = <span class="number">1</span> - ans;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,(Yes[<span class="number">1</span>] ? <span class="number">1</span>: ans));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  cin&gt;&gt;t;</span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/14/CF1461CRandom-Events/" data-id="ckqlzmxec0005gktl1g3xgliz" data-title="CF1461CRandom Events" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -569,6 +565,10 @@
       <ul>
         
           <li>
+            <a href="/2022/01/13/2022-%E5%AF%92%E5%81%87%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92/">2022-寒假游戏计划</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/09/Springboot-Email/">Springboot Email</a>
           </li>
         
@@ -582,10 +582,6 @@
         
           <li>
             <a href="/2021/09/16/python-matplotlib/">python-matplotlib</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/11/Month/">Month</a>
           </li>
         
       </ul>
