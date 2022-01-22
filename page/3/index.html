@@ -77,6 +77,120 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UVA-11584" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/18/UVA-11584/" class="article-date">
+  <time class="dt-published" datetime="2021-04-18T05:11:13.000Z" itemprop="datePublished">2021-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/18/UVA-11584/">UVA 11584</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。</p>
+<p>嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。<br>要哮着做题，这些所谓的题目万变不离其中，<br>大致就是我不会的，其他人都会的 诸如此类的东西罢了。<br>🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺</p>
+<p>嗯~ o(<em>￣▽￣</em>)o<br>真的，我看这题就懵了，完全想不到dp的思路。<br>即使已经知道这道题目是线性dp的练习题。<br>既然要求整段字符串的性质，即总的回文串最少。<br>看看能不能由前一段递推过来。<br>ps：看完题解之后，由了一丝丝感触，<strong>But</strong>并没什么卵用<br>    因为一做题就会白给。WDNMD</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = <span class="built_in">min</span>(dp[j] + (s[j] ~ s[i])是不是回文串)；</span><br><span class="line">是就 +<span class="number">1</span>，否则就不应该参与比较。</span><br><span class="line">我们再想这样就是<span class="built_in">O</span>(n^<span class="number">3</span>)，因为还要花费<span class="built_in">O</span>(n)去判断回文串。</span><br><span class="line">可以预处理回文串&#123;同样利用dp&#125;</span><br></pre></td></tr></table></figure>
+<p>en，这大概就是我的想法。等下 see see code</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<p>——————</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UVa11584 Partitioning by Palindromes</span></span><br><span class="line"><span class="comment">// Rujia Liu</span></span><br><span class="line"><span class="comment">// This code is slightly different from the book.</span></span><br><span class="line"><span class="comment">// It  uses memoization to judge whether s[i..j] is a palindrome.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, kase, vis[maxn][maxn], p[maxn][maxn], d[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_palindrome</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(i &gt;= j) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s[i] != s[j]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(vis[i][j] == kase) <span class="keyword">return</span> p[i][j];</span><br><span class="line">  vis[i][j] = kase;</span><br><span class="line">  p[i][j] = <span class="built_in">is_palindrome</span>(i+<span class="number">1</span>, j<span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">return</span> p[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> T;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">  <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(vis));</span><br><span class="line">  <span class="keyword">for</span>(kase = <span class="number">1</span>; kase &lt;= T; kase++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s+<span class="number">1</span>);</span><br><span class="line">    n = <span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      d[i] = i+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">is_palindrome</span>(j+<span class="number">1</span>, i)) d[i] = <span class="built_in">min</span>(d[i], d[j] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/18/UVA-11584/" data-id="ckqlzmxeh000bgktlgprt0yxm" data-title="UVA 11584" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-UVA-11400" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/04/17/UVA-11400/" class="article-date">
+  <time class="dt-published" datetime="2021-04-17T02:19:02.000Z" itemprop="datePublished">2021-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/17/UVA-11400/">UVA 11400</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>题意：让你花费最小去设计一个照明系统，有 n 种灯泡。<br>      每种灯泡必须用不同的电源，<br>      每种灯泡有四个性质：电压、电源费用、灯泡费用、所需灯泡数量。<br>同种灯泡可以共用一个电源，电压低的可以换成电压高的，但反之不然。</p>
+<p><strong>Soution</strong></p>
+<p>因为可以共用一个电源，就比较复杂，此时我们不慌。<br>看一手题解，好！现在已经知道是dp了。<br>我们稳扎稳打，继续思考，但是现在思路并不明确。<br>这并不影响我们写题。<br>我们先 BING，click ，再 ctrl + c ， cral + v。<br>看见评测系统显示 AC了，我们不骄傲，直接开下一题。<br>🤪 to be continue </p>
+<hr>
+<p>因为可以以低电压换高电压，并且肯定是都换完，不然肯定会使用两种电源。<br>导致不可能最优，因为全换完更优。<br>既然要更换一些，不难想到要进行状态转移。<br>令 <em><strong>dp[i]:</strong></em> 代表 1 ~ i 种灯泡中的最优方案。【即花费最小</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">那么 dp[i] = <span class="built_in">min</span>(dp[j] + k + (presum[i] - presum[j]) * num);</span><br></pre></td></tr></table></figure>
+
+<p>这里我一开始不太懂为什么会整段换，或者说有点想知道它的原因。<br>因为如果在分割的话，就和后面的状态重复了，没有意义，还浪费time。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">代码还没写，</span><br><span class="line">问就是忘了ctrl + v 了~~~~</span><br></pre></td></tr></table></figure>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UVa11400 Lighting System Design</span></span><br><span class="line"><span class="comment">// Rujia Liu</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Lamp</span> &#123;</span></span><br><span class="line">  <span class="keyword">int</span> v, k, c, l;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Lamp&amp; rhs) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> v &lt; rhs.v;</span><br><span class="line">  &#125;</span><br><span class="line">&#125; lamp[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, s[maxn], d[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(cin &gt;&gt; n &amp;&amp; n) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">      cin &gt;&gt; lamp[i].v &gt;&gt; lamp[i].k &gt;&gt; lamp[i].c &gt;&gt; lamp[i].l;</span><br><span class="line">    <span class="built_in">sort</span>(lamp+<span class="number">1</span>, lamp+n+<span class="number">1</span>);</span><br><span class="line">    s[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) s[i] = s[i<span class="number">-1</span>] + lamp[i].l;</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      d[i] = s[i] * lamp[i].c + lamp[i].k; <span class="comment">// 前i个灯泡全买类型i</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">        d[i] = <span class="built_in">min</span>(d[i], d[j] + (s[i] - s[j]) * lamp[i].c + lamp[i].k);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; d[n] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/04/17/UVA-11400/" data-id="ckqlzmxef0009gktl3xlsh2x3" data-title="UVA 11400" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CF1461CRandom-Events" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/04/14/CF1461CRandom-Events/" class="article-date">
@@ -470,98 +584,6 @@
 
 
   
-    <article id="post-数据类型型的范围" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/" class="article-date">
-  <time class="dt-published" datetime="2021-03-27T04:36:48.000Z" itemprop="datePublished">2021-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/">数据类型型的范围</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>unsigned  int  0～4294967295  </p>
-<p>int  -2147483648～2147483647  (2*10^9)</p>
-<p>unsigned long 0～4294967295</p>
-<p>long  -2147483648～2147483647</p>
-<p>long long的最大值：9223372036854775807</p>
-<p>long long的最小值：-9223372036854775808</p>
-<p>unsigned long long的最大值：1844674407370955161</p>
-<p> __ int64的最大值：9223372036854775807__</p>
-<p> __int64的最小值：-9223372036854775808</p>
-<p>unsigned __int64的最大值：18446744073709551615</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/27/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%9E%8B%E7%9A%84%E8%8C%83%E5%9B%B4/" data-id="ckqlzmxep000mgktl5j2l5per" data-title="数据类型型的范围" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-HDU-deep-monkey-and-little-tiger" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/03/27/HDU-deep-monkey-and-little-tiger/" class="article-date">
-  <time class="dt-published" datetime="2021-03-27T03:55:08.000Z" itemprop="datePublished">2021-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/03/27/HDU-deep-monkey-and-little-tiger/">HDU deep monkey and little tiger</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>%%%  还没补题</p>
-<p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=4815">hdu deep monkey and little tiger</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e6</span> + <span class="number">15</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD  = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">40000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">out</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y ,<span class="keyword">double</span> z)</span></span>&#123;</span><br><span class="line">cout&lt;&lt; x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; z &lt;&lt;<span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">__int64  dp[MAX];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>    n , x;</span><br><span class="line">    <span class="keyword">double</span> p;</span><br><span class="line">   cin&gt;&gt; n &gt;&gt; p;</span><br><span class="line">   dp[<span class="number">0</span>]  = <span class="number">1</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i =  <span class="number">1</span>; i &lt; MAX ; i++) dp[i] = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;  n; i++)&#123;</span><br><span class="line">    cin&gt;&gt; x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">40000</span>; j &gt;= x; j--)&#123;</span><br><span class="line">      <span class="keyword">if</span>( dp[j - x] )  dp[j] += dp[j-x]; <span class="comment">// 我以为我懂了，难受，尬</span></span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">double</span>  base = <span class="built_in">pow</span>(<span class="number">2.0</span>, <span class="number">1.0</span> * n);</span><br><span class="line">   <span class="comment">//cout&lt;&lt;base;</span></span><br><span class="line">   <span class="keyword">double</span>  P = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= <span class="number">40000</span>; i++)&#123;</span><br><span class="line">     sum+=dp[i];</span><br><span class="line">     <span class="comment">//cout&lt;&lt;sum &lt;&lt; &quot; &quot;&lt;&lt; base &lt;&lt;endl;</span></span><br><span class="line">     P = <span class="number">1.0</span> * sum / base;</span><br><span class="line">     <span class="comment">//cout&lt;&lt; P &lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">if</span>(P &gt;= p)&#123;</span><br><span class="line">        cout&lt;&lt; i &lt;&lt;endl;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">     cin&gt;&gt;t;</span><br><span class="line">     <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/03/27/HDU-deep-monkey-and-little-tiger/" data-id="ckqlzmxee0008gktlgx7u6t96" data-title="HDU deep monkey and little tiger" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -598,6 +620,14 @@
       <ul>
         
           <li>
+            <a href="/2022/01/22/2022-1-22/">2022-1-22</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/21/English-Reading/">English-Reading</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/13/2022-%E5%AF%92%E5%81%87%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92/">2022-寒假游戏计划</a>
           </li>
         
@@ -607,14 +637,6 @@
         
           <li>
             <a href="/2022/01/08/%E6%9C%8D%E5%8A%A1%E5%99%A8-IMAP/">服务器 IMAP</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/23/python%E4%BD%9C%E4%B8%9A/">python作业</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/16/python-matplotlib/">python-matplotlib</a>
           </li>
         
       </ul>
