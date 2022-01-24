@@ -77,6 +77,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2022-1-24" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/01/24/2022-1-24/" class="article-date">
+  <time class="dt-published" datetime="2022-01-24T12:47:34.000Z" itemprop="datePublished">2022-01-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/01/24/2022-1-24/">2022-1-24</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="寄了，Dp真难"><a href="#寄了，Dp真难" class="headerlink" title="寄了，Dp真难"></a>寄了，Dp真难</h4><p> SOS</p>
+<p>嗯！ 目前还不会，看了好久</p>
+<p>依然写不出</p>
+<p>每一次打码都觉得自己是对的</p>
+<p>我真的是vegetable dog ！！！！</p>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1625/problem/C">Problem</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *    Author:        Rye</span></span><br><span class="line"><span class="comment"> *    Data:        2022-01-23</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pb push_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">&#x27;\n&#x27;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> ll inf = <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">3e5</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">pow_mod</span><span class="params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">    ll ans = <span class="number">1</span>;</span><br><span class="line">    ll base = a%mod;</span><br><span class="line">    <span class="keyword">while</span>(b)&#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) ans = (ans*base)%mod;</span><br><span class="line">        base = (base*base)%mod;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">lcm</span><span class="params">(ll a,ll b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a*b/__gcd(a,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll dp[<span class="number">505</span>][<span class="number">505</span>];<span class="comment">//dp[i][j]代表前i个标志中删除了j个</span></span><br><span class="line">ll d[maxn],a[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);cin.<span class="built_in">tie</span>(<span class="number">0</span>);cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> n,l,k;cin&gt;&gt;n&gt;&gt;l&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)cin&gt;&gt;d[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)cin&gt;&gt;a[i];</span><br><span class="line">    d[n] = l;</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(dp));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        dp[i][<span class="number">0</span>] = dp[i<span class="number">-1</span>][<span class="number">0</span>]+(d[i]-d[i<span class="number">-1</span>])*a[i<span class="number">-1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= k; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dp[i][j]==inf)<span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> pos = i+<span class="number">1</span>; pos &lt;= n; pos++)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[pos][j+pos-i<span class="number">-1</span>]=<span class="built_in">min</span>(dp[pos][j+pos-i<span class="number">-1</span>],dp[i][j]+(d[pos]-d[i])*a[i]);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ll ans = inf;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= k; i++)</span><br><span class="line">        ans=<span class="built_in">min</span>(ans,dp[n][i]);</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/01/24/2022-1-24/" data-id="ckysot83p00008wtl3qkcfggi" data-title="2022-1-24" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2022-1-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/01/23/2022-1-23/" class="article-date">
@@ -507,51 +553,11 @@
 
 
   
-    <article id="post-Java" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/10/Java/" class="article-date">
-  <time class="dt-published" datetime="2021-09-10T01:43:32.000Z" itemprop="datePublished">2021-09-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/10/Java/">Java-</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;WorkStateDet&gt; All =  <span class="keyword">new</span> ArrayList&lt;WorkStateDet&gt;();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    		   Connection con = DataBase.getConn();</span><br><span class="line">    	  	   Statement  st  = <span class="keyword">null</span>;</span><br><span class="line">    	  	   ResultSet  rs  = <span class="keyword">null</span>;</span><br><span class="line">    	       String sql = <span class="string">&quot;select * from Account  where  Id   = &quot;</span>+ Id + <span class="string">&quot;;&quot;</span>;</span><br><span class="line">    	       st = con.createStatement();</span><br><span class="line">    	       rs = st.executeQuery(sql);</span><br><span class="line">    	       </span><br><span class="line">    	       <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">    	       WorkStateDet p = <span class="keyword">new</span> WorkStateDet();</span><br><span class="line">    	       p.setId(rs.getString(<span class="string">&quot;Id&quot;</span>));</span><br><span class="line">    	       p.setDepId(rs.getString(<span class="string">&quot;DepId&quot;</span>));</span><br><span class="line">    	       p.setTime(rs.getString(<span class="string">&quot;Time&quot;</span>));</span><br><span class="line">    	       p.setLate(rs.getInt(<span class="string">&quot;Late&quot;</span>));</span><br><span class="line">    	       p.setNotWork(rs.getInt(<span class="string">&quot;NotWork&quot;</span>));</span><br><span class="line">    	       p.setWeekendOT(rs.getInt(<span class="string">&quot;WeekendOT&quot;</span>));</span><br><span class="line">    	       p.setHolidayOt(rs.getInt(<span class="string">&quot;HolidayOt&quot;</span>));</span><br><span class="line">    	       p.setSpecial(rs.getInt(<span class="string">&quot;Special&quot;</span>));</span><br><span class="line">    	       p.setLog(rs.getString(<span class="string">&quot;Log&quot;</span>));</span><br><span class="line">    	       All.add(p);</span><br><span class="line">    	       &#125;</span><br><span class="line">    	       rs.close();</span><br><span class="line">    	       st.close();</span><br><span class="line">    	       con.close();</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/10/Java/" data-id="cktdpc5gt000084tl9z2ne1m5" data-title="Java-" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -583,6 +589,10 @@
       <ul>
         
           <li>
+            <a href="/2022/01/24/2022-1-24/">2022-1-24</a>
+          </li>
+        
+          <li>
             <a href="/2022/01/23/2022-1-23/">2022-1-23</a>
           </li>
         
@@ -596,10 +606,6 @@
         
           <li>
             <a href="/2022/01/13/2022-%E5%AF%92%E5%81%87%E6%B8%B8%E6%88%8F%E8%AE%A1%E5%88%92/">2022-寒假游戏计划</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/09/Springboot-Email/">Springboot Email</a>
           </li>
         
       </ul>
