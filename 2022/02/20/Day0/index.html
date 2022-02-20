@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Day0 | Lovelydeer&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Problem 1 123456789101112131415161718192021222324252627282930#include &lt;iostream&gt;using namespace std;typedef long long ll;const int N &#x3D; 1e5 + 25;ll odd[N] , even[N];int main()&amp;#123;    int T;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day0">
+<meta property="og:url" content="http://example.com/2022/02/20/Day0/index.html">
+<meta property="og:site_name" content="Lovelydeer&#39;s blog">
+<meta property="og:description" content="Problem 1 123456789101112131415161718192021222324252627282930#include &lt;iostream&gt;using namespace std;typedef long long ll;const int N &#x3D; 1e5 + 25;ll odd[N] , even[N];int main()&amp;#123;    int T;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-20T05:27:16.000Z">
+<meta property="article:modified_time" content="2022-02-20T07:41:14.181Z">
+<meta property="article:author" content="Lovelydeer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Lovelydeer's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Lovelydeer&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">今天也是个垃圾鸭</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Day0" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/20/Day0/" class="article-date">
+  <time class="dt-published" datetime="2022-02-20T05:27:16.000Z" itemprop="datePublished">2022-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Day0
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1638/problem/B">Problem 1</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line">ll odd[N] , even[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        ll n , x;</span><br><span class="line">        cin&gt;&gt; n;</span><br><span class="line">        <span class="keyword">int</span> numOdd = <span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">int</span> numEven = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++)&#123;</span><br><span class="line">            cin&gt;&gt; x;</span><br><span class="line">            <span class="keyword">if</span>( x &amp; <span class="number">1</span>) odd[numOdd++] = x;</span><br><span class="line">            <span class="keyword">else</span>  even[numEven++] = x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">bool</span> Bad = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; numOdd - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(odd[i] &gt; odd[i+<span class="number">1</span>]) Bad = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numEven - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(even[i] &gt; even[i+<span class="number">1</span>]) Bad = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt; (Bad ? <span class="string">&quot;No&quot;</span> : <span class="string">&quot;Yes&quot;</span>) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Other’s Code</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> t,n,a[N],pos[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">        <span class="keyword">int</span> fl=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> maxi[<span class="number">2</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> tp=(a[i]%<span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span>(maxi[tp]&gt;a[i]) fl=<span class="number">1</span>;</span><br><span class="line">            maxi[tp]=<span class="built_in">max</span>(maxi[tp],a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;(fl==<span class="number">1</span>?<span class="string">&quot;NO&quot;</span>:<span class="string">&quot;YES&quot;</span>)&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Solution:</p>
+<p>The condition “ai+ ai+1 is odd” means that we can only swap elements of different parity. </p>
+<p>If either the order of even elements or the order of odd elements is not non-decreasing, then it is impossible to sort the sequence. </p>
+<p>Otherwise, let’s prove that it is always possible to sort the sequence.</p>
+<p> We can for example perform Bubble Sort algorithm. </p>
+<p>Note that this algorithm only swaps elements ai and ai+1 if ai&gt;ai+1, </p>
+<p>so it will never swap two elements of the same parity (given our assumption on their order).</p>
+<p>Time complexity: O(n).</p>
+<p>en, 如果一个数的后面还有一个和它本身奇偶性相同，且小于它本身。 </p>
+<p>这种情况下，无论怎样都会涉及到这两个数的交换，所以否决。</p>
+<p>假设后面没有和同奇偶性，切小于它本身的。</p>
+<p>说明它可以去任何位置。</p>
+<p>一个一个数如此以来就ok了。</p>
+<p>类似 Bubble Sort Algorithm （冒泡排序</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1638/problem/C">Problem 2</a></p>
+<p>心虚.exe</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        ll n , x;</span><br><span class="line">        cin&gt;&gt; n;</span><br><span class="line">        stack&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cin&gt;&gt; x;</span><br><span class="line">            <span class="keyword">if</span>(s.<span class="built_in">size</span>() == <span class="number">0</span>) s.<span class="built_in">push</span>(x);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>( x &gt; s.<span class="built_in">top</span>() ) s.<span class="built_in">push</span>(x);</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = s.<span class="built_in">top</span>();</span><br><span class="line">                <span class="keyword">while</span>(s.<span class="built_in">size</span>() &gt; <span class="number">0</span> &amp;&amp; s.<span class="built_in">top</span>() &gt; x ) s.<span class="built_in">pop</span>();</span><br><span class="line">                s.<span class="built_in">push</span>(temp);</span><br><span class="line">            &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;s.<span class="built_in">size</span>()&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>Solution:</p>
+<p>The key idea is to start merging from the beginning using a stack.</p>
+<p> Assume that the connected components are always segments in the permutation (this solution also proves this by induction).</p>
+<p>We will iterate the prefix and maintain in our stack the minimum/maximum element of all the segments in order.</p>
+<p> When we increase the prefix adding the next position ii, we add (pi,pi)to the top of the stack. </p>
+<p>Then, we merge the top two segments while we are able to. </p>
+<p>If the top two segments have their minimum/maximum elements(min1,max1) and (min2,max2), </p>
+<p>in this order from the top, we will merge them only if max2&gt;min1,</p>
+<p> because this means that an edge exist between the two.</p>
+<p>When we reach the end, our stack contains all connected components. </p>
+<p>Note that merging two adjacent intervals forms a new interval, so we have proven by induction that our first assumption is correct.</p>
+<p>en，这题太难了。有点浪费我Time</p>
+<p>毕竟我很菜，要从简单的开始练习</p>
+<p>通过此题，我应该学习《单调栈》</p>
+<p>我大致知道这题怎么做，只不过对数据结构不那么敏感</p>
+<p>不知道如何优化</p>
+<p>6<br>3<br>1 2 3<br>5<br>2 1 4 3 5<br>6<br>6 1 4 2 5 3<br>1<br>1<br>6<br>3 2 1 6 5 4<br>5<br>3 1 5 2 4</p>
+<p>就是维护单调关系</p>
+<p>保证从小到大 或者 从大到小</p>
+<p>但这题又有新花样</p>
+<p>两者之间 可以通过第三者联系</p>
+<p>栈顶关系网最大，应该维护它，以保证所有数都可以通过它建立联系</p>
+<p>每次所有数都需和第三者 比较 才可</p>
+<p>突然发现题目理解都很抽象，我是无法具体理解的</p>
+<p>或许某时有灵感 </p>
+<p>才会想到如此抽象的CODE </p>
+<hr>
+<h4 id="单调栈的应用"><a href="#单调栈的应用" class="headerlink" title="单调栈的应用"></a>单调栈的应用</h4><p><strong>作者：LeetCode-Solution<br>链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode-/">https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/zhu-zhuang-tu-zhong-zui-da-de-ju-xing-by-leetcode-/</a><br>来源：力扣（LeetCode）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/">84. 柱状图中最大的矩形 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = heights.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;int&gt; left(n), right(n);stack&lt;int&gt; mono_stack;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (!mono_stack.<span class="built_in">empty</span>() &amp;&amp; heights[mono_stack.<span class="built_in">top</span>()] &gt;= heights[i]) &#123;</span><br><span class="line">            mono_stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        left[i] = (mono_stack.<span class="built_in">empty</span>() ? <span class="number">-1</span> : mono_stack.<span class="built_in">top</span>());</span><br><span class="line">        mono_stack.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mono_stack = stack&lt;<span class="keyword">int</span>&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</span><br><span class="line">        <span class="keyword">while</span> (!mono_stack.<span class="built_in">empty</span>() &amp;&amp; heights[mono_stack.<span class="built_in">top</span>()] &gt;= heights[i]) &#123;</span><br><span class="line">            mono_stack.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        right[i] = (mono_stack.<span class="built_in">empty</span>() ? n : mono_stack.<span class="built_in">top</span>());</span><br><span class="line">        mono_stack.<span class="built_in">push</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, (right[i] - left[i] - <span class="number">1</span>) * heights[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>en </p>
+<p>很难</p>
+<p>我只是大致了解了一点点</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/20/Day0/" data-id="ckzuyoewa0000rwtlgp6h9ptk" data-title="Day0" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/13/Other-s-Writing/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Other&#39;s Writing</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/20/Day0/">Day0</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/13/Other-s-Writing/">Other&#39;s Writing</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/24/2022-1-24/">2022-1-24</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/23/2022-1-23/">2022-1-23</a>
+          </li>
+        
+          <li>
+            <a href="/2022/01/22/2022-1-22/">2022-1-22</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Lovelydeer<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
