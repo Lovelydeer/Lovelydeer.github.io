@@ -77,6 +77,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-UvaLive-4329" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/06/UvaLive-4329/" class="article-date">
+  <time class="dt-published" datetime="2021-05-06T05:23:55.000Z" itemprop="datePublished">2021-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/06/UvaLive-4329/">UvaLive 4329</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> [UvaLive Ping pong](<a target="_blank" rel="noopener" href="https://vjudge.z180.cn/problem/UVALive-4329">Ping pong - UVALive 4329 - Virtual Judge (z180.cn)</a>)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> a[N],L[N],f[N],R[N];</span><br><span class="line"><span class="keyword">int</span> n,Max;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="keyword">return</span> (-x)&amp;x; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        res += f[x];</span><br><span class="line">        x -= <span class="built_in">lowbit</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">      <span class="keyword">while</span>(x &lt;= N)&#123;</span><br><span class="line">        f[x] += v;</span><br><span class="line">        x += <span class="built_in">lowbit</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    Max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)</span><br><span class="line">       cin&gt;&gt;a[i], Max = <span class="built_in">max</span>(Max,a[i]);</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span> (f));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)&#123;</span><br><span class="line">        L[i] = <span class="built_in">sum</span>(a[i]);</span><br><span class="line">        <span class="built_in">update</span>(a[i],<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in"><span class="keyword">sizeof</span></span> (f));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n;i &gt;= <span class="number">1</span>; i--)&#123;</span><br><span class="line">        R[i] = <span class="built_in">sum</span>(a[i]);</span><br><span class="line">        <span class="built_in">update</span>(a[i],<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        ans = ans + (i - <span class="number">1</span> - L[i]) * R[i] + L[i] * ( n - i - R[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">    <span class="comment">//freopen(&quot;cout1.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">         <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/06/UvaLive-4329/" data-id="ckqlzmxel000fgktl90s51wu8" data-title="UvaLive 4329" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-UvaLive-3027" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/05/04/UvaLive-3027/" class="article-date">
@@ -519,57 +560,6 @@
 
 
   
-    <article id="post-CF71C-Round-Table-Knights" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/04/10/CF71C-Round-Table-Knights/" class="article-date">
-  <time class="dt-published" datetime="2021-04-10T03:29:17.000Z" itemprop="datePublished">2021-04-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/04/10/CF71C-Round-Table-Knights/">CF71C. Round Table Knights</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/71/C">71C.Round Table Knights</a> </p>
-<p><strong>题意</strong>：给你一个环，问你在环中能不能组成一个正多边形。</p>
-<p>  能就输出YES，否则输出NO。</p>
-<p>先把链扩大一倍，就成了环。</p>
-<p>然后就是判断正多边形，就是边长一样而已。</p>
-<p>注意一些细节就ok了吧，还有就是变量名要起得有辨识度，不然会搞乱逻辑。</p>
-<p>导致奇奇怪怪得事发生。</p>
-<p>就挺暴力的，看看能不能构成正多边形就ok。</p>
-<p><del>我的代码时间复杂度感觉是玄学虽然能AC，还没TLE</del></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"><span class="keyword">const</span> ll inf  = <span class="number">1e17</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N  = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e5</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">bool</span> ok[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i  &lt; n ;i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i &lt; <span class="number">2</span> * n; i++)&#123;</span><br><span class="line">        a[i] = a[i-n];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">bool</span> flag  = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n%i == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> times = n/i;</span><br><span class="line">            <span class="comment">//cout&lt;&lt;times&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">if</span>(times &lt; <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">//cout&lt;&lt;i&lt;&lt;endl;</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> s = <span class="number">0</span>; s &lt; i; s++)&#123;</span><br><span class="line">                 <span class="comment">//cout&lt;&lt;s &lt;&lt;endl;</span></span><br><span class="line">                 <span class="keyword">if</span>( a[s] ) ok[s] = <span class="literal">true</span>;</span><br><span class="line">                 <span class="keyword">else</span> <span class="keyword">continue</span>;</span><br><span class="line">                 <span class="keyword">int</span> tot;</span><br><span class="line">                <span class="keyword">int</span> newName = s;</span><br><span class="line">                <span class="keyword">for</span>(tot = <span class="number">1</span>; tot &lt; times; tot++)&#123;</span><br><span class="line">                    <span class="comment">//cout&lt;&lt;a[s+i]&lt;&lt;&quot; &quot;;</span></span><br><span class="line">                    <span class="keyword">if</span>( ok[newName] &amp;&amp; a[newName+i]) ok[newName+i] = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">                    newName+=i;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//cout&lt;&lt;endl;</span></span><br><span class="line">                <span class="keyword">if</span>(tot == times) &#123;</span><br><span class="line">                    flag =<span class="literal">true</span>;</span><br><span class="line">                    cout&lt;&lt;<span class="string">&quot;YES\n&quot;</span>;</span><br><span class="line">                    <span class="keyword">return</span> ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!flag) cout&lt;&lt;<span class="string">&quot;NO\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// freopen(&quot;cin.txt&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">   <span class="comment">//freopen(&quot;cout.txt&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">   <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">//cin&gt;&gt;t;</span></span><br><span class="line">  <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/04/10/CF71C-Round-Table-Knights/" data-id="ckqlzmxeg000agktl258yghas" data-title="CF71C. Round Table Knights" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -606,6 +596,10 @@
       <ul>
         
           <li>
+            <a href="/2022/02/21/Day1/">Day1</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/20/Day0/">Day0</a>
           </li>
         
@@ -619,10 +613,6 @@
         
           <li>
             <a href="/2022/01/23/2022-1-23/">2022-1-23</a>
-          </li>
-        
-          <li>
-            <a href="/2022/01/22/2022-1-22/">2022-1-22</a>
           </li>
         
       </ul>
