@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Day3 | Lovelydeer&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Problem 1 123456789101112131415161718192021222324252627282930313233343536#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;typedef long long ll;const int N &#x3D; 1e4 + 25;int l[N] , r[N];int main()&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day3">
+<meta property="og:url" content="http://example.com/2022/02/23/Day3/index.html">
+<meta property="og:site_name" content="Lovelydeer&#39;s blog">
+<meta property="og:description" content="Problem 1 123456789101112131415161718192021222324252627282930313233343536#include&lt;bits&#x2F;stdc++.h&gt;using namespace std;typedef long long ll;const int N &#x3D; 1e4 + 25;int l[N] , r[N];int main()&amp;#123;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-23T01:44:58.000Z">
+<meta property="article:modified_time" content="2022-02-23T05:55:18.070Z">
+<meta property="article:author" content="Lovelydeer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Lovelydeer's blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Lovelydeer&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">今天也是个垃圾鸭</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Day3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/23/Day3/" class="article-date">
+  <time class="dt-published" datetime="2022-02-23T01:44:58.000Z" itemprop="datePublished">2022-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Day3
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1623/problem/B">Problem 1</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e4</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l[N] , r[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="keyword">int</span> del;</span><br><span class="line">        cin&gt;&gt; n;</span><br><span class="line">        set&lt;<span class="keyword">int</span>&gt; S[N];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cin&gt;&gt; l[i] &gt;&gt; r[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> num = l[i]; num &lt;= r[i]; num++)</span><br><span class="line">                S[i].<span class="built_in">insert</span>(num);</span><br><span class="line">        <span class="keyword">if</span>(S[i].<span class="built_in">size</span>() == <span class="number">1</span>) del = l[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> nextDel = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> s = <span class="number">0</span>; s &lt; n; s++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(S[i].<span class="built_in">empty</span>()) <span class="keyword">continue</span>;</span><br><span class="line">            S[i].<span class="built_in">erase</span>(del);</span><br><span class="line">            <span class="keyword">if</span>(S[i].<span class="built_in">empty</span>()) cout&lt;&lt;l[i] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; r[i] &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; del &lt;&lt;endl;</span><br><span class="line">            <span class="keyword">if</span>(S[i].<span class="built_in">size</span>() == <span class="number">1</span>) nextDel = *(S[i].<span class="built_in">begin</span>());</span><br><span class="line">        &#125;</span><br><span class="line">        del = nextDel;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h4><p>en</p>
+<p>一开始有点懵，BUT</p>
+<p>最后一个肯定是区间 l == r ， d = l</p>
+<p>而且它是唯一的 </p>
+<p>我就想用排除法</p>
+<p>题目也说清楚了 每一个都是唯一且确定的</p>
+<p>那么每次都可以找到一个 区间排除后 只剩一个数的 ， </p>
+<p>每次在所有区间 去除 已经确定的数</p>
+<p>n不是特别大 ， n 的2次方 ok的</p>
+<p>用 set 记录每个区间的所有可能数</p>
+<p>按照上面的方法即可</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1623/problem/C">Problem 2</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"><span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Judge</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c[N];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n; i++) c[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">2</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">int</span> d = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(a[i] + c[i] &lt; x ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(c[i] - x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            d = (a[i] + c[i] - x) / <span class="number">3</span>;</span><br><span class="line">            c[i] -= <span class="number">3</span> *d;</span><br><span class="line">            c[i<span class="number">-1</span>] += d;</span><br><span class="line">            c[i<span class="number">-2</span>] += <span class="number">2</span>*d;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            d = a[i] / <span class="number">3</span>;</span><br><span class="line">            c[i] -= <span class="number">3</span>*d;</span><br><span class="line">            c[i<span class="number">-1</span>] += d;</span><br><span class="line">            c[i<span class="number">-2</span>] += <span class="number">2</span> * d;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(a[<span class="number">0</span>] + c[<span class="number">0</span>]&gt;= x &amp;&amp; a[<span class="number">1</span>] + c[<span class="number">1</span>] &gt;= x) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">int</span> T = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="keyword">int</span> n ;</span><br><span class="line">        ll all = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> Max = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> Min = <span class="number">1e10</span>;</span><br><span class="line">        cin&gt;&gt; n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cin&gt;&gt; a[i];</span><br><span class="line">            Min = <span class="built_in">min</span>(a[i] , Min);</span><br><span class="line">            Max = <span class="built_in">max</span>(a[i] , Max);</span><br><span class="line">        &#125;</span><br><span class="line">        ans = Min;</span><br><span class="line">        ll l = Min , r = Max;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)&#123;</span><br><span class="line">            ll mid = l +  r  &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>( <span class="built_in">Judge</span>( mid , n)) l = mid + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt; l - <span class="number">1</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我透</p>
+<p>二分都能写错</p>
+<p>我是傻子哦</p>
+<p>最小值最大化（金典二分提示语</p>
+<p>贪心处理即可</p>
+<p>对于每个二分的 x </p>
+<p>​    贪心地把它能给的都给前面</p>
+<p>​    又因为它是从小到大来的 ( because the opertion is in order , we can’t use the value that the right c[] gives it </p>
+<p>​    我们需要保留原始序列 , 因此需要额外开一个数组记录 当前的数给左边增加了多少</p>
+<p>​    能把原始值尽可能地用了    </p>
+<p>​                                            c[] 与 x 的关系 </p>
+<p>​                                            c[] &gt;= x ,represent  it can use all of the value c[]</p>
+<p>​                                            otherwise , it can only use a[] - (x - c[])</p>
+<p>​    最后判定 a[0] , a[1]</p>
+<p>ending</p>
+<p>这是我第一次写出C题，且没看题解</p>
+<p>虽然很对很多大佬很Ez</p>
+<p>BUT FOR ME ， IT’S  A MIRACLE . </p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/23/Day3/" data-id="cl0125imu0001kotlditxbbuz" data-title="Day3" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/24/Day4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Day4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/22/Day2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Day2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">May 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/24/Day4/">Day4</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/23/Day3/">Day3</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/22/Day2/">Day2</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/21/Day1/">Day1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/20/Day0/">Day0</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Lovelydeer<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
