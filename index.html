@@ -77,6 +77,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Day5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/25/Day5/" class="article-date">
+  <time class="dt-published" datetime="2022-02-25T03:46:11.000Z" itemprop="datePublished">2022-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/02/25/Day5/">Day5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1567/problem/B">Problem 1</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">3e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> f[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">        f [i]  = f[i<span class="number">-1</span>] ^ i;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">    <span class="keyword">int</span> a , b;</span><br><span class="line">        cin&gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span>(f[a<span class="number">-1</span>] != b) &#123;</span><br><span class="line">        <span class="keyword">if</span>( (f[a<span class="number">-1</span>] ^ b) == a ) cout&lt;&lt; a + <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt; a + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt; a ;</span><br><span class="line">    cout&lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h4><p>en 就挺好想的</p>
+<p>NO OTHER TRICKS</p>
+<p>首先满足最小未出现的数是 a ， 显然 0 ~ a -1 都必须存在此序列中</p>
+<p>f[ x ] represent that  for  every i  do a  Bitwise  with f[i - 1] XOR until  i == x . </p>
+<p>我们先看一下 f[a-1] 是否就是 b ，if so ， it’s optimal , so the answer is a.</p>
+<p>如果不是，我们就需要自己构造</p>
+<p>f[a-1] XOR x == b  ,  x = f[a-1] ^ b</p>
+<p>但 x 可能是 a ，这样的话就不能满足条件1了 ， 因此需要额外加 2 个数 ， 构造成 x , the answer is a + 2 </p>
+<p>if  the value of x  doesn’t equal to a , then the optimal answer is  a + 1</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1567/problem/C">Problem 2</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e5</span> + <span class="number">25</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">    string s ;</span><br><span class="line">    ll even = <span class="number">0</span> , odd = <span class="number">0</span>;</span><br><span class="line">    cin&gt;&gt; s ;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; s.<span class="built_in">size</span>() ; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i &amp; <span class="number">1</span>) even = even * <span class="number">10</span> + s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">else</span> odd = odd * <span class="number">10</span> +  s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt; (odd + <span class="number">1</span> )* ( even + <span class="number">1</span> ) - <span class="number">2</span> &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution:"></a>Solution:</h4><p>en </p>
+<p>自己写了好久，</p>
+<p>But i feel sorry when i see the right tutorial .</p>
+<p>我却感觉能根据我的这份错误代码 ， 重新出一道题 </p>
+<p>hhhhhhhh ~</p>
+<p>因为它进位是 2 个 一进 </p>
+<p>所以相邻的根本没有关系</p>
+<p>所以只要分别把 间隔为2的提取出来</p>
+<p>计算每个数有多少种可能，相乘即可</p>
+<p>BUT  题目要求 positive numbers , so the zero should not being in the right answer .</p>
+<p>故为 (a + 1) * ( b + 1) - 2.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/25/Day5/" data-id="cl02ks5xf0000dotlbv65flee" data-title="Day5" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Day4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/02/24/Day4/" class="article-date">
@@ -712,127 +781,6 @@
 
 
   
-    <article id="post-English-Reading" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/01/21/English-Reading/" class="article-date">
-  <time class="dt-published" datetime="2022-01-21T12:04:17.000Z" itemprop="datePublished">2022-01-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/01/21/English-Reading/">English-Reading</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>因此，身处在互联网时代。我们必须清醒：电子阅读真正的含义和什么真地值得我们花费时间和精力。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Therefore, in the era of the Internet , we must be well aware of what e-reading truly </span><br><span class="line">means and what is really worth our time and attention.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>在我看来，人们绝不应该丢弃他们完成梦想的事业精神，因为没有了上进心，社会将难以发展。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">In my view , people should never abandon the enterprising spirit to strive for their</span><br><span class="line">dreams , as without discontentment , there will be no development of society.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>运动也可以使我们保持头脑清醒，释放压力， 增强我们的幸福感和满足感，故可以提升我们的心理健康。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Doing sports can also refresh our mind, release our pressure and enhance our happiness </span><br><span class="line">and satisifaction , thus improve out mental health.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>我对那些沉迷于社交网络的年轻人感到遗憾。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">But I am regretful to find some yung people immersing  themselves in social networks </span><br><span class="line">sometimes.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>一有时间，我们就应该通过锻炼保持健康。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Whenever we have time, we should take some exercise to keep fit .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>他对人工智能的未来有更乐观的看法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">He has a rosie outlook on the future of artificial intelligence .</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>不同的人对怎样成为杰出的人持有不同观点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Different people hold quite different opinions about the key to becoming a talented person.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>然而，另一些人认为机遇对个人成功起了更大作用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">However , others believe that opportunities play a vital role in one&#39;s success.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>没有准备好的话，大好时机可能错过。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Without a ready mind , golden  opportunities may slip through one&#39;s fingers.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>对捍卫国家主权的关注绝不是新话题。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Concern to protect national sovereignty is far from new.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>如果你提供我一个在贵公司工作的机会，我将不胜感激。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I would appreciate it if you could offer me an opportunity to work in your company. </span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<p>尽管书本上的知识不能保证实践上的成功，但它确实在某种程度上有帮助。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Although knowledge from textbooks cannot guarantee success in practice , it helps at least.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>但无聊并不都是坏事。通过促进自我反省和幻想，它可以激发创造力。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">But boredom isn&#39;t all bad. By encouraging self-reflection and daydreaming , it can spur creativity.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>在我们这个始终相连的世界，无聊也许是一种难以定义的状态，但却是一个多产的状态。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">In our always-connected world, boredom may be a hard-to-define state, but it is a fertile one.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>看着油漆变干或者水沸腾，或者至少把你的智能手机暂时收起来一会，你可能会解锁你的又一个新点子。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Watch paint dry or water boil , or at least put away your smartphone for a while , and you might unlock your next big </span><br><span class="line">idea.</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<p>理由改变了，对更多树木的渴望依然不变。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The justifications change ; the desire for more trees remains constant.</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">后来，政治策略家们采用这些术语来影响公众意见。</span><br><span class="line"></span><br><span class="line">Later, political strategists adopted the terms to influence public opinion.</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">But do they really mean the same thing ?</span><br><span class="line">但是它们的意思真是一样的吗?</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Word use played a critical role in developing that doubt.</span><br><span class="line">措辞的使用在推动那一质疑起到了关键作用。</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/01/21/English-Reading/" data-id="ckyod75ev0000uktl12qtar78" data-title="English-Reading" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -869,6 +817,10 @@
       <ul>
         
           <li>
+            <a href="/2022/02/25/Day5/">Day5</a>
+          </li>
+        
+          <li>
             <a href="/2022/02/24/Day4/">Day4</a>
           </li>
         
@@ -882,10 +834,6 @@
         
           <li>
             <a href="/2022/02/21/Day1/">Day1</a>
-          </li>
-        
-          <li>
-            <a href="/2022/02/20/Day0/">Day0</a>
           </li>
         
       </ul>
