@@ -150,6 +150,66 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/svn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lovelydeer">
+      <meta itemprop="description" content="不知道不知道，人傻了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lovelydeer's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/15/svn/" class="post-title-link" itemprop="url">svn</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-15 10:33:47 / Modified: 10:35:06" itemprop="dateCreated datePublished" datetime="2022-06-15T10:33:47+08:00">2022-06-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">配置</span><br><span class="line">yum install subversion</span><br><span class="line"></span><br><span class="line">svnadmin create /opt/svn/runoob</span><br><span class="line"></span><br><span class="line">svnserve -d -r 目录 --listen-port 端口号</span><br><span class="line"></span><br><span class="line">本例是使用 svnserve -d -r /opt/svn 以多库 svnserve 方式启动 SVN，所以 URL：svn://192.168.0.1/runoob01。</span><br><span class="line"></span><br><span class="line">1、svnserve.conf:</span><br><span class="line">[general]</span><br><span class="line">anon-access = none</span><br><span class="line">auth-access = write</span><br><span class="line">password-db = passwd</span><br><span class="line">authz-db = authz</span><br><span class="line"></span><br><span class="line">2、passwd:</span><br><span class="line">[users]</span><br><span class="line">admin=123</span><br><span class="line"></span><br><span class="line">3、authz:</span><br><span class="line">[groups]</span><br><span class="line">[/]</span><br><span class="line">admin= rw</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">killall  svnserve</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/25/Day5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -985,71 +1045,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/22/2022-1-22/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lovelydeer">
-      <meta itemprop="description" content="不知道不知道，人傻了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lovelydeer's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/22/2022-1-22/" class="post-title-link" itemprop="url">2022-1-22</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2022-01-22 11:34:24 / Modified: 11:40:00" itemprop="dateCreated datePublished" datetime="2022-01-22T11:34:24+08:00">2022-01-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h4 id="1-Algorithm-Day-0"><a href="#1-Algorithm-Day-0" class="headerlink" title="1. Algorithm Day 0"></a>1. Algorithm Day 0</h4><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1625/problem/A">Problem</a></p>
-<p>Ez  </p>
-<p>就是比较相同位置的0，1数量多少，然后决定这个位置是0还是1 。</p>
-<p>Ending ： 追加起来即可 </p>
-<p>Ps: vector 竟然忘了怎么用，果然太久没打，什么都忘了。 I am a vegetable dog .</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">30</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>  a[N];   <span class="comment">// a[i] represent the numbers of 1 .</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin&gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span>  n,l,x;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; N; i++)&#123;</span><br><span class="line">            a[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cin&gt;&gt; n &gt;&gt; l;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            cin&gt;&gt; x;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> times  = <span class="number">0</span> ; times &lt; l; times++)&#123;</span><br><span class="line">                <span class="keyword">int</span> start = <span class="number">1</span> &lt;&lt; times ;</span><br><span class="line">                <span class="keyword">if</span>(start &amp; x ) a[times]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">double</span> compete = n / <span class="number">2</span> ;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; l; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i] * <span class="number">1.0</span>  &gt; compete ) ans += (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt; ans &lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1119,7 +1114,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

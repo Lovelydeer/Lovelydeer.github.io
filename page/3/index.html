@@ -150,6 +150,66 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/07/layui-form/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Lovelydeer">
+      <meta itemprop="description" content="不知道不知道，人傻了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lovelydeer's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/07/layui-form/" class="post-title-link" itemprop="url">layui-form</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-09-07 20:13:07 / Modified: 20:20:46" itemprop="dateCreated datePublished" datetime="2021-09-07T20:13:07+08:00">2021-09-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>  <span class="attr">class</span>=<span class="string">&quot;layui-form&quot;</span> <span class="attr">action</span> = <span class="string">&quot;&quot;</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> =<span class="string">&quot;text&quot;</span> <span class="attr">name</span> = <span class="string">&quot;test&quot;</span> <span class="attr">required</span> <span class="attr">lay-verify</span>=<span class="string">&quot;go&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span> = <span class="string">&quot;submit&quot;</span> <span class="attr">lay-submit</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">layui.use(<span class="string">&#x27;form&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">	  <span class="keyword">var</span> form = layui.form;</span></span><br><span class="line"><span class="javascript">	  <span class="comment">//各种基于事件的操作，下面会有进一步介绍</span></span></span><br><span class="line">form.verify(&#123;</span><br><span class="line">	 go:[</span><br><span class="line">		    /^[\S]&#123;6,12&#125;$/</span><br><span class="line"><span class="javascript">		    ,<span class="string">&#x27;密码必须6到12位，且不能出现空格&#x27;</span></span></span><br><span class="line">	     ] ,</span><br><span class="line">&#125;); </span><br><span class="line">&#125;);</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">required (必填项)</span><br><span class="line">phone（手机号）</span><br><span class="line">email（邮箱）</span><br><span class="line">url（网址）</span><br><span class="line">number（数字）</span><br><span class="line">date（日期）</span><br><span class="line">identity(身份证)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/04/wifi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -710,88 +770,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/18/UVA-11584/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Lovelydeer">
-      <meta itemprop="description" content="不知道不知道，人傻了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lovelydeer's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/04/18/UVA-11584/" class="post-title-link" itemprop="url">UVA 11584</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-04-18 13:11:13" itemprop="dateCreated datePublished" datetime="2021-04-18T13:11:13+08:00">2021-04-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-19 18:50:28" itemprop="dateModified" datetime="2021-04-19T18:50:28+08:00">2021-04-19</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>题意：给你一个字符串，你的任务是把它划分成最尽量少的回文串。</p>
-<p>嗯，看了题目就懵了。这该如何是好，面对这种情况，我们依然不要激动。<br>要哮着做题，这些所谓的题目万变不离其中，<br>大致就是我不会的，其他人都会的 诸如此类的东西罢了。<br>🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺🤺</p>
-<p>嗯~ o(<em>￣▽￣</em>)o<br>真的，我看这题就懵了，完全想不到dp的思路。<br>即使已经知道这道题目是线性dp的练习题。<br>既然要求整段字符串的性质，即总的回文串最少。<br>看看能不能由前一段递推过来。<br>ps：看完题解之后，由了一丝丝感触，<strong>But</strong>并没什么卵用<br>    因为一做题就会白给。WDNMD</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp[i] = <span class="built_in">min</span>(dp[j] + (s[j] ~ s[i])是不是回文串)；</span><br><span class="line">是就 +<span class="number">1</span>，否则就不应该参与比较。</span><br><span class="line">我们再想这样就是<span class="built_in">O</span>(n^<span class="number">3</span>)，因为还要花费<span class="built_in">O</span>(n)去判断回文串。</span><br><span class="line">可以预处理回文串&#123;同样利用dp&#125;</span><br></pre></td></tr></table></figure>
-<p>en，这大概就是我的想法。等下 see see code</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<p>——————</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// UVa11584 Partitioning by Palindromes</span></span><br><span class="line"><span class="comment">// Rujia Liu</span></span><br><span class="line"><span class="comment">// This code is slightly different from the book.</span></span><br><span class="line"><span class="comment">// It  uses memoization to judge whether s[i..j] is a palindrome.</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, kase, vis[maxn][maxn], p[maxn][maxn], d[maxn];</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">is_palindrome</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(i &gt;= j) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s[i] != s[j]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(vis[i][j] == kase) <span class="keyword">return</span> p[i][j];</span><br><span class="line">  vis[i][j] = kase;</span><br><span class="line">  p[i][j] = <span class="built_in">is_palindrome</span>(i+<span class="number">1</span>, j<span class="number">-1</span>);</span><br><span class="line">  <span class="keyword">return</span> p[i][j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> T;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">  <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(vis));</span><br><span class="line">  <span class="keyword">for</span>(kase = <span class="number">1</span>; kase &lt;= T; kase++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s+<span class="number">1</span>);</span><br><span class="line">    n = <span class="built_in">strlen</span>(s+<span class="number">1</span>);</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">      d[i] = i+<span class="number">1</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++)</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">is_palindrome</span>(j+<span class="number">1</span>, i)) d[i] = <span class="built_in">min</span>(d[i], d[j] + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, d[n]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -861,7 +839,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
